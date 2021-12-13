@@ -24,6 +24,7 @@ class Route
         $inputPath = (isset($_SERVER["PATH_INFO"])) ? $_SERVER["PATH_INFO"] : "/";
         foreach (self::$routes as $path => $content) {
 
+            echo $path;
             if ($path == $inputPath) {
 
                 //
