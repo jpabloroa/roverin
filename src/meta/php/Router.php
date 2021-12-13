@@ -32,6 +32,8 @@ class Route
             }
         }
 
+        echo $inputPath;
+
         //
         $_REQUEST["error"] = "404";
         include(__DIR__ . self::$errorRoutes["404"]);
