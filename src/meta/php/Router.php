@@ -13,7 +13,7 @@ class Route
     }
 
     //
-    public static function addError($value = "")
+    public static function addError($value = [])
     {
         array_push(self::$errorRoutes, $value);
     }
