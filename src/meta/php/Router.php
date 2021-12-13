@@ -13,9 +13,9 @@ class Route
     }
 
     //
-    public static function addError($value = [])
+    public static function addError($route = "", $value = "")
     {
-        array_merge(self::$errorRoutes, $value);
+        self::$errorRoutes[$route] = $value;
     }
 
     //
@@ -24,7 +24,7 @@ class Route
         $inputPath = (isset($_SERVER["PATH_INFO"])) ? $_SERVER["PATH_INFO"] : "/";
         foreach (self::$routes as $path => $content) {
 
-            echo $path . "<br>";
+            //
             if ($path == $inputPath) {
 
                 //
@@ -32,8 +32,6 @@ class Route
                 exit;
             }
         }
-
-        echo $inputPath;
 
         //
         $_REQUEST["error"] = "404";
