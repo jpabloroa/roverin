@@ -1,7 +1,7 @@
 @echo off
 
 D:
-cd "\OneDrive\Escritorio\CLASE JAVA\JAVASCRIPT\php\PROYECTOS\ROVERIN\scripts"
+cd "\OneDrive\Escritorio\CLASE JAVA\ROVERIN\scripts"
 
 git add src/
 
