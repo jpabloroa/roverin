@@ -7,9 +7,9 @@ class Route
     private static $errorRoutes = [];
 
     //
-    public static function add($value = [])
+    public static function add($route = "", $value = "")
     {
-        array_merge(self::$routes, $value);
+        self::$routes[$route] = $value;
     }
 
     //
