@@ -9,13 +9,13 @@ class Route
     //
     public static function add($value = [])
     {
-        array_push(self::$routes, $value);
+        array_merge(self::$routes, $value);
     }
 
     //
     public static function addError($value = [])
     {
-        array_push(self::$errorRoutes, $value);
+        array_merge(self::$errorRoutes, $value);
     }
 
     //
@@ -24,7 +24,7 @@ class Route
         $inputPath = (isset($_SERVER["PATH_INFO"])) ? $_SERVER["PATH_INFO"] : "/";
         foreach (self::$routes as $path => $content) {
 
-            echo $path."<br>";
+            echo $path . "<br>";
             if ($path == $inputPath) {
 
                 //
