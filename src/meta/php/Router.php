@@ -3,8 +3,8 @@
 class Route
 {
 
-    public static $routes;
-    private $errorRoutes;
+    private $routes = [];
+    private $errorRoutes = [];
 
     //
     public static function add($value = [])
