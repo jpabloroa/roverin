@@ -21,9 +21,10 @@ class Route
     //
     public static function submit()
     {
+        $inputPath = (isset($_SERVER["PATH_INFO"])) ? $_SERVER["PATH_INFO"] : "/";
         foreach (self::$routes as $path => $content) {
 
-            if ($path == $_SERVER["PATH_INFO"]) {
+            if ($path == $inputPath) {
 
                 //
                 include(__DIR__ . "/../../" . $content);
