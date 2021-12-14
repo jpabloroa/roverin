@@ -8,6 +8,6 @@ Route::add("/peri", "/mvc/vista/inicio.php");
 Route::add("/pai", "/mvc/vista/inicio.php");
 Route::add("/route", "/mvc/vista/inicio.php");
 
-Route::addError("404", "/pages/error.php");
+Route::addError("404", "/pages/error/error.php");
 
 Route::submit();
