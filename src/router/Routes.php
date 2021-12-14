@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../meta/php/Router.php";
 
-Route::add("/", "/html/home");
+Route::add("/", "/pages/html/home");
 Route::add("/home", "/mvc/vista/inicio.php");
 Route::add("/peri", "/mvc/vista/inicio.php");
 Route::add("/pai", "/mvc/vista/inicio.php");
