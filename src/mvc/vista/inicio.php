@@ -41,10 +41,10 @@ echo "Viva la raza";
             <!-- Logo -->
             <a href="#" class="w3-bar-item w3-button w3-blue">roverin</a>
 
-            <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
-            <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-            <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+            <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Nosotros</a>
+            <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Equipo</a>
+            <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Experiencia</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
             <div class="w3-dropdown-hover w3-hide-small">
                 <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -93,34 +93,28 @@ echo "Viva la raza";
     </div>
 
     <!-- Team Container -->
-    <div class="w3-container w3-padding-64 w3-center" id="team">
-        <h2>OUR TEAM</h2>
-        <p>Meet the team - our office rats:</p>
+    <div class="w3-container w3-padding-64 w3-center" id="equipo">
+        <h2>Nuestros colaboradores</h2>
+        <p>Conozca a nuestro equipo</p>
 
         <div class="w3-row"><br>
 
             <div class="w3-quarter">
                 <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Johnny Walker</h3>
-                <p>Web Designer</p>
+                <h3>Juan Pablo </h3><h2>Roa</h2>
+                <p>Gestor de proyectos</p>
             </div>
 
             <div class="w3-quarter">
                 <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Rebecca Flex</h3>
-                <p>Support</p>
+                <h3>Diego</h3><h2>Restrepo</h2>
+                <p>Administrador de imagen</p>
             </div>
 
             <div class="w3-quarter">
                 <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Jan Ringo</h3>
-                <p>Boss man</p>
-            </div>
-
-            <div class="w3-quarter">
-                <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Kai Ringo</h3>
-                <p>Fixer</p>
+                <h3>Daniel</h3><h2>Tunarroza</h2>
+                <p>Diseñador web</p>
             </div>
 
         </div>
