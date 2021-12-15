@@ -8,7 +8,8 @@ function encode64($element, $id, $alt, $class, $encoding, $file)
 function toBase64($encoding, $file)
 {
     $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
-    echo 'data:' . $encoding . ',base64,' . base64_encode($binary);
+    $string = 'data:' . $encoding . ',base64,' . base64_encode($binary);
+    echo base64_decode($string);
 }
 ?>
 
@@ -31,11 +32,11 @@ Roverin Technologics - 2021
 -->
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/bootstrap.min.css") ?>">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/bootstrap.min.css") ?>" />
 
-    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/font-awesome.css") ?>">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/font-awesome.css") ?>" />
 
-    <link rel="stylesheet" href="<?php toBase64("text/css", "assets/css/style.css") ?>">
+    <link rel="stylesheet" href="<?php toBase64("text/css", "assets/css/style.css") ?>" />
 
 </head>
 
