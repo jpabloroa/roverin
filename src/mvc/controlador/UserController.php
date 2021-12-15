@@ -17,7 +17,7 @@ class UserController extends BaseController
     {
         if ($this->httpMethod == "POST") {
 
-            require_once __DIR__ . "../modelo/ClientModel.php";
+            require_once __DIR__ . "/../modelo/ClientModel.php";
 
             $clientController = new ClientModel();
             $data = parse_str($_SERVER['QUERY_STRING'], $query);
