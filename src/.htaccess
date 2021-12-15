@@ -1,5 +1,5 @@
 Order Allow,Deny 
 Deny from all 
-ErrorDocument 403 /router/Routes.php
+ErrorDocument 403 /src/router/Routes.php
 
 #Redirect 404 router/Routes.php
