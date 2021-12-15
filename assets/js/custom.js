@@ -82,6 +82,8 @@
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
 
+		console.log("submited0");
+
 		var form = $(this);
 		var url = form.attr('action');
 
@@ -93,6 +95,8 @@
 				$("#server-response-concact").innerHTML = data.info; // show response from the php script.
 			}
 		});
+
+		console.log("ajax excecuted");
 
 
 	});
