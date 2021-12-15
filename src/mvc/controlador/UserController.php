@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/BaseController.php";
+require_once __DIR__ . "/BaseController.php";
 
 class UserController extends BaseController
 {
@@ -20,15 +20,14 @@ class UserController extends BaseController
             require_once __DIR__ . "/../modelo/ClientModel.php";
 
             $clientController = new ClientModel();
-            $data = parse_str($_SERVER['QUERY_STRING'], $query);
-            if (isset($data["correo"])) {
+            if (isset($_POST["correo"])) {
                 $clientController->crearNuevaSolicitud(
-                    (isset($data["combre"])) ? $data["combre"] : "NULL",
-                    $data["correo"],
-                    (isset($data["celular"])) ? $data["celular"] : "NULL",
-                    (isset($data["palabrasClave"])) ? $data["palabrasClave"] : "NULL",
-                    (isset($data["diasDeSolicitud"])) ? $data["diasDeSolicitud"] : "NULL",
-                    (isset($data["mensaje"])) ? $data["mensaje"] : "NULL"
+                    (isset($_POST["combre"])) ? $_POST["combre"] : "NULL",
+                    $_POST["correo"],
+                    (isset($_POST["celular"])) ? $_POST["celular"] : "NULL",
+                    (isset($_POST["palabrasClave"])) ? $_POST["palabrasClave"] : "NULL",
+                    (isset($_POST["diasDeSolicitud"])) ? $_POST["diasDeSolicitud"] : "NULL",
+                    (isset($_POST["mensaje"])) ? $_POST["mensaje"] : "NULL"
                 );
                 $this->sendOutput(201, [], ["Created Successfully"], "Su solicitud ha sido creada exitosamente");
             } else {
