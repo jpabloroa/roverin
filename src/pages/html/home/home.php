@@ -8,9 +8,14 @@ function encode64($element, $id, $alt, $class, $encoding, $file)
 function toBase64($encoding, $file)
 {
     try {
-        $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
-        $string = 'data:' . $encoding . ',base64,' . "" . base64_encode($binary);
-        echo $string;
+        $path = __DIR__ . "/" . $file;
+        if (file_exists($path)) {
+            $binary = fread(fopen($path, "r"), filesize($path));
+            $string = 'data:' . $encoding . ',base64,' . "" . base64_encode($binary);
+            echo $string;
+        } else {
+            throw new Exception("'No existe el archivo'");
+        }
     } catch (Exception $e) {
         echo $e->getMessage();
     }
