@@ -10,13 +10,14 @@ function toBase64($encoding, $file)
 {
     try {
         $path = __DIR__ . "/" . $file;
+        $path = "src/pages/html/home/" . $file;
         if (file_exists($path)) {
             //
             //$binary = fread(fopen($path, "r"), filesize($path));
             $binary = file_get_contents($path);
             //
             //echo 'data:image/bmp,base64,' . base64_encode($binary);
-            echo "src/pages/html/home/". $file;
+            //echo "src/pages/html/home/". $file;
         } else {
             throw new Exception("'No existe el archivo'");
         }
