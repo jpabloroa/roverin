@@ -10,7 +10,10 @@ function toBase64($encoding, $file)
     try {
         $path = __DIR__ . "/" . $file;
         if (file_exists($path)) {
-            $binary = fread(fopen($path, "r"), filesize($path));
+            //
+            //$binary = fread(fopen($path, "r"), filesize($path));
+            $binary = file_get_contents($path);
+            //
             $string = 'data:image/bmp,base64,' . base64_encode($binary);
             echo $string;
         } else {
