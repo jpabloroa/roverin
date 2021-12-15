@@ -16,7 +16,7 @@ function toBase64($encoding, $file)
             $binary = file_get_contents($path);
             //
             //echo 'data:image/bmp,base64,' . base64_encode($binary);
-            echo $file;
+            echo "src/pages/html/home/". $file;
         } else {
             throw new Exception("'No existe el archivo'");
         }
