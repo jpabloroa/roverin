@@ -4,4 +4,4 @@ order deny,allow
 
 Options -Indexes
 
-#ErrorDocument 403 src/pages/error/error.php
+ErrorDocument 403 src/pages/error/error.php
