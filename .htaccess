@@ -9,3 +9,4 @@ DirectoryIndex src/router/Routes.php
 </IfModule>
 
 ErrorDocument 403 "<h3>Paila rey</h3>"
+ErrorDocument 404 "<h3>Paila rey</h3>"
