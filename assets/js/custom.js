@@ -98,7 +98,6 @@
 			data: datos
 		}).done(function (data) {
 			document.getElementById("server-response-concact").innerHTML = data.info;
-			console.log("submited0 " + data.info);
 		});
 	});
 

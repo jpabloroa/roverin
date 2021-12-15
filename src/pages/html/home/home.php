@@ -1,3 +1,16 @@
+<?php
+
+function encode64($id, $alt, $class, $file)
+{
+    $binary = fread(fopen($file, "r"), filesize($file));
+    echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:image/bmp;base64,' . base64_encode($binary) . '"/>';
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,8 +110,7 @@ Roverin Technologics - 2021
                 <div class="col-lg-12">
                     <div class="row">
                         <!-- ***** Inicio: Item de Cualidad ***** -->
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
-                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div class="features-small-item">
                                 <div class="icon">
                                     <i><img src="assets/images/featured-item-01.png" alt=""></i>
@@ -111,8 +123,7 @@ Roverin Technologics - 2021
                         <!-- ***** Fin: Item de Cualidad ***** -->
 
                         <!-- ***** Inicio: Item de Cualidad ***** -->
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
-                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                             <div class="features-small-item">
                                 <div class="icon">
                                     <i><img src="assets/images/featured-item-02.png" alt=""></i>
@@ -125,8 +136,7 @@ Roverin Technologics - 2021
                         <!-- ***** Fin: Item de Cualidad ***** -->
 
                         <!-- ***** Inicio: Item de Cualidad ***** -->
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
-                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                             <div class="features-small-item">
                                 <div class="icon">
                                     <i><img src="assets/images/featured-item-03.png" alt=""></i>
@@ -149,9 +159,11 @@ Roverin Technologics - 2021
     <section class="section padding-top-70 padding-bottom-0" id="lo-que-hacemos">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <?php
+                    encode64("", "App", "rounded img-fluid d-block mx-auto", "assets/images/left-image.png");
+                    ?>
+                    <!--<img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">-->
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
@@ -194,8 +206,7 @@ Roverin Technologics - 2021
                     </div>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
-                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                     <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
             </div>
@@ -420,26 +431,22 @@ Roverin Technologics - 2021
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="nombre" type="text" class="form-control" id="nombre"
-                                            placeholder="Nombre" required="">
+                                        <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="correo" type="email" class="form-control" id="correo"
-                                            placeholder="Correo electrónico" required="">
+                                        <input name="correo" type="email" class="form-control" id="correo" placeholder="Correo electrónico" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="celular" type="text" class="form-control" id="celular"
-                                            placeholder="Número de celular" required="">
+                                        <input name="celular" type="text" class="form-control" id="celular" placeholder="Número de celular" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <textarea name="mensaje" rows="6" class="form-control" id="mensaje"
-                                            placeholder="Your Message" required=""></textarea>
+                                        <textarea name="mensaje" rows="6" class="form-control" id="mensaje" placeholder="Your Message" required=""></textarea>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
