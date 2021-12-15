@@ -67,7 +67,7 @@ Roverin Technologics - 2021
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/bootstrap.min.css"); ?>">
 
-    <link rel="stylesheet" type="text/css" href="<?php toBase643("text/css", "assets/css/font-awesome.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/font-awesome.css"); ?>">
 
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/style.css"); ?>">
 
