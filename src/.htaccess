@@ -1,4 +1,5 @@
+Order Allow,Deny 
+Deny from all 
 ErrorDocument 403 router/Routes.php
-#Order Allow,Deny 
-#Deny from all 
+
 #Redirect 404 router/Routes.php
