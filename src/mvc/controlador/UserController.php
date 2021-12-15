@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__."/BaseController.php";
+
 class UserController extends BaseController
 {
     private $httpMethod = "";
@@ -30,7 +32,7 @@ class UserController extends BaseController
                 );
                 $this->sendOutput(201, [], ["Created Successfully"], "Su solicitud ha sido creada exitosamente");
             } else {
-                $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo válido");
+                $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
             }
         }
     }
