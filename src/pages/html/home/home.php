@@ -24,7 +24,7 @@ function toBase64($encoding, $file)
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="assets/images/fav-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" type="image/png" href="<?php toBase64("image/png", "assets/images/fav-icon.png") ?>" type="image/x-icon">
 
     <title>roverin - Soluciones de Software</title>
     <!--
@@ -61,7 +61,7 @@ Roverin Technologics - 2021
                     <nav class="main-nav">
                         <!-- ***** Inicio: Logo ***** -->
                         <a href="#" class="logo">
-                            <img src="assets/images/logo.png" alt="Roverin tech" />
+                            <img src="<?php toBase64("image/png", "assets/images/logo.png") ?>" alt="Roverin tech" />
                         </a>
                         <!-- ***** Fin: Logo ***** -->
                         <!-- ***** Inicio: Menú ***** -->
@@ -116,7 +116,7 @@ Roverin Technologics - 2021
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/featured-item-01.png" alt=""></i>
+                                    <i><img src="<?php toBase64("image/png", "assets/images/featured-icon-1.png") ?>" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Agilidad de entrega</h5>
                                 <p>Generamos <strong>implementaciones de Software</strong> desde cero en un tiempo
@@ -129,7 +129,7 @@ Roverin Technologics - 2021
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/featured-item-02.png" alt=""></i>
+                                    <i><img src="<?php toBase64("image/png", "assets/images/featured-item-02.png") ?>" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Calidad de producto</h5>
                                 <p>Nos destacamos por generar un <strong>código limpio, durable, escalable, y
@@ -142,7 +142,7 @@ Roverin Technologics - 2021
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/featured-item-03.png" alt=""></i>
+                                    <i><img src="<?php toBase64("image/png", "assets/images/featured-item-03.png") ?>" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Asesor&iacute;a y acompañamiento</h5>
                                 <p>Brindamos <strong>seguimiento</strong> con el fin de llegar a la necesidad, generando
@@ -163,9 +163,7 @@ Roverin Technologics - 2021
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <?php
-                    encode64("img", "", "App", "rounded img-fluid d-block mx-auto", "image/bmp", "assets/images/left-image.png");
-                    ?>
+                    <?php toBase64("image/png", "assets/images/left-image.png") ?>
                     <!--<img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">-->
                 </div>
                 <div class="col-lg-1"></div>
@@ -210,7 +208,7 @@ Roverin Technologics - 2021
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="<?php toBase64("image/png", "assets/images/right-image.png") ?>" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
             </div>
         </div>
@@ -238,42 +236,42 @@ Roverin Technologics - 2021
                 <div class="row">
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
-                            <i><img src="assets/images/spa-item-logo.png" alt=""></i>
+                            <i><img src="<?php toBase64("image/png", "assets/images/spa-item-logo.png") ?>" alt=""></i>
                             <strong>Single Page Application</strong>
                             <span>Maneje sus implementaciones sin recargar la página</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
-                            <i><img src="assets/images/resp-design-item-logo.png" alt=""></i>
+                            <i><img src="<?php toBase64("image/png", "assets/images/resp-design-item-logo.png") ?>" alt=""></i>
                             <strong>Responsive Design</strong>
                             <span>Utilice sus implementaciones en cualquier dispositivo</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
-                            <i><img src="assets/images/cubos-logo.png" alt=""></i>
+                            <i><img src="<?php toBase64("image/png", "assets/images/cubos-logo.png") ?>" alt=""></i>
                             <strong>API REST HTTP</strong>
                             <span>Gestione su información con los métodos HTTP</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
-                            <i><img src="assets/images/sql-item-logo.png" alt=""></i>
+                            <i><img src="<?php toBase64("image/png", "assets/images/sql-item-logo.png") ?>" alt=""></i>
                             <strong>SQL Servers</strong>
                             <span>Administre su información desde bases de datos especializadas</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
-                            <i><img src="assets/images/ajax-item-logo.png" alt=""></i>
+                            <i><img src="<?php toBase64("image/png", "assets/images/ajax-item-logo.png") ?>" alt=""></i>
                             <strong>AJAX</strong>
                             <span>Conecte sus implementaciones en tiempo real de manera asíncrona</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
-                            <i><img src="assets/images/vm-item-logo.png" alt=""></i>
+                            <i><img src="<?php toBase64("image/png", "assets/images/vm-item-logo.png") ?>" alt=""></i>
                             <strong>VM</strong>
                             <span>Realice el despliegue de sus aplicaciones en servidores en remoto</span>
                         </a>
@@ -340,7 +338,7 @@ Roverin Technologics - 2021
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-post-thumb">
                         <div class="img">
-                            <img src="assets/images/blog-item-02.png" alt="">
+                            <img src="<?php toBase64("image/png", "assets/images/blog-item-02.png") ?>" alt="">
                         </div>
                         <div class="blog-content">
                             <h3>
@@ -358,7 +356,7 @@ Roverin Technologics - 2021
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-post-thumb">
                         <div class="img">
-                            <img src="assets/images/blog-item-01.png" alt="">
+                            <img src="<?php toBase64("image/png", "assets/images/blog-item-01.png") ?>" alt="">
                         </div>
                         <div class="blog-content">
                             <h3>
@@ -375,7 +373,7 @@ Roverin Technologics - 2021
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-post-thumb">
                         <div class="img">
-                            <img src="assets/images/blog-item-03.png" alt="">
+                            <img src="<?php toBase64("image/png", "assets/images/blog-item-03.png") ?>" alt="">
                         </div>
                         <div class="blog-content">
                             <h3>
