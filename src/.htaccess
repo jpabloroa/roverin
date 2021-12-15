@@ -1,8 +1,8 @@
-<FilesMatch "^.*\.php$>
-    order deny,allow 
-    deny from all
-</Files>
+#<FilesMatch "^.*\.php$>
+#    order deny,allow 
+#    deny from all
+#</Files>
 
-<FilesMatch "^(index|key)\.php$">
-    allow from all  # Allow here.
-</Files>
+#<FilesMatch "^(index|key)\.php$">
+#    allow from all  
+#</Files>
