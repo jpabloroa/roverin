@@ -375,7 +375,7 @@ Roverin Technologics - 2021
                                 Interfaz de programación de Aplicaciones. Utilizaremos el lenguage PHP y el servidor
                                 Apache
                             </div>
-                            <a href="#" class="main-button">Read More</a>
+                            <a href="#tutoriales" class="main-button">Saber Más</a>
                         </div>
                     </div>
                 </div>
@@ -391,7 +391,7 @@ Roverin Technologics - 2021
                             <div class="text">
                                 Aprenda a crear y desplegar una página web desde cero, utilizando HTML5 y CSS3
                             </div>
-                            <a href="#" class="main-button">Read More</a>
+                            <a href="#tutoriales" class="main-button">Saber Más</a>
                         </div>
                     </div>
                 </div>
@@ -410,7 +410,7 @@ Roverin Technologics - 2021
                                 registros en una base de datos. Utilizaremos el lenguaje Java, con su implementación
                                 empresarial (EE), un gestor de base de datos MySQL y el servidor Apache-Tomcat 9
                             </div>
-                            <a href="#" class="main-button">Read More</a>
+                            <a href="#tutoriales" class="main-button">Saber Más</a>
                         </div>
                     </div>
                 </div>
@@ -473,7 +473,7 @@ Roverin Technologics - 2021
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <textarea name="mensaje" rows="6" class="form-control" id="mensaje" placeholder="Your Message" required=""></textarea>
+                                        <textarea name="mensaje" rows="6" class="form-control" id="mensaje" placeholder="Mensaje..." required=""></textarea>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
