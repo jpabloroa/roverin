@@ -16,7 +16,7 @@ function toBase64($encoding, $file)
             $binary = fread(fopen($path, "r"), filesize($path));
 
             //
-            echo 'data:image/png;base64,' . base64_encode($binary);
+            echo 'data:' . $encoding . ';base64,' . base64_encode($binary);
         } else {
             throw new Exception("'No existe el archivo'");
         }
@@ -49,7 +49,7 @@ Roverin Technologics - 2021
 
     <link rel="stylesheet" type="text/css" href="src/pages/html/home/assets/css/font-awesome.css">
 
-    <link rel="stylesheet" type="text/css" href="src/pages/html/home/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "src/pages/html/home/assets/css/style.css"); ?>">
 
 </head>
 
