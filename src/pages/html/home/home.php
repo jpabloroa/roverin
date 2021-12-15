@@ -116,7 +116,7 @@ Roverin Technologics - 2021
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="<?php toBase64("image/png", "assets/images/featured-icon-1.png") ?>" alt=""></i>
+                                    <i><img src="<?php toBase64("image/png", "assets/images/featured-item-01.png") ?>" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Agilidad de entrega</h5>
                                 <p>Generamos <strong>implementaciones de Software</strong> desde cero en un tiempo
