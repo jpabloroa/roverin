@@ -1,6 +1,6 @@
-ErrorDocument 403 src/pages/error/error.php
-
 RedirectMatch 403 ^/src/?$
+
+ErrorDocument 403 src/pages/error/error.php
 
 #RewriteEngine On
 #RewriteRule ^(.*/)?\/src/pages/error/error.php+ - [R=404,L]
