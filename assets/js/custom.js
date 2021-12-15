@@ -88,16 +88,17 @@
 		//var url = form.attr('action');
 		var url = "src/mvc/vista/formulario_home.php";
 
+		var datos = form.serialize();
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: form.serialize(), // serializes the form's elements.
+			data: datos, // serializes the form's elements.
 			success: function (data) {
 				$("#server-response-concact").innerHTML = data.info; // show response from the php script.
 			}
 		});
 
-		console.log(`ajax excecuted in path ${url}`);
+		console.log(`ajax excecuted in path ${url} del recurso ${datos}`);
 
 
 	});
