@@ -2,7 +2,7 @@
 
 function encode64($id, $alt, $class, $file)
 {
-    $binary = fread(fopen($file, "r"), filesize($file));
+    $binary = fread(fopen(__DIR__ . $file, "r"), filesize(__DIR__ . $file));
     echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:image/bmp;base64,' . base64_encode($binary) . '"/>';
 }
 
