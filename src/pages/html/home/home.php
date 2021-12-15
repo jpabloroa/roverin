@@ -51,6 +51,12 @@ Roverin Technologics - 2021
 
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/style.css"); ?>">
 
+    <style>
+        .welcome-area {
+            background-image: linear-gradient(to bottom, var(--gradiente-inicial-1), var(--gradiente-final-1)), url(<?php toBase64("image/bmp", "assets/images/banner-bg.png") ?>);
+        }
+    </style>
+
 </head>
 
 <body>
