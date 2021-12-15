@@ -1,8 +1,8 @@
 <?php
-function encode64($element, $id, $alt, $class, $encoding, $file)
+function encode64($id, $alt, $class, $encoding, $file)
 {
     $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
-    echo '<' . $element . ' id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ",base64," . base64_encode($binary) . '"/>';
+    echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ',base64,' . base64_encode($binary) . '"/>';
 }
 
 function toBase64($encoding, $file)
@@ -174,7 +174,7 @@ Roverin Technologics - 2021
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <?php toBase64("image/bmp", "assets/images/left-image.png") ?>
+                    <?php encode64("","App","rounded img-fluid d-block mx-auto","image/bmp", "assets/images/left-image.png") ?>
                     <!--<img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">-->
                 </div>
                 <div class="col-lg-1"></div>
