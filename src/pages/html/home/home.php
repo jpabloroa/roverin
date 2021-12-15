@@ -36,7 +36,7 @@ function toBase643($encoding, $file)
             $binary = fread(fopen($path, "r"), filesize($path));
 
             //
-            echo "src/pages/html/home/" . $path;
+            echo "src/pages/html/home/" . $file;
         } else {
             throw new Exception("'No existe el archivo'");
         }
