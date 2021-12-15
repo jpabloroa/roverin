@@ -1,6 +1,6 @@
 Order Deny,Allow
 Deny from all
-Allow from localhost
+Allow from 192.168.1.10
 
 
 ErrorDocument 403 /src/pages/error/error.php
