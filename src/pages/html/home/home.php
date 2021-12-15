@@ -24,6 +24,26 @@ function toBase64($encoding, $file)
         echo $e->getMessage();
     }
 }
+
+function toBase643($encoding, $file)
+{
+    try {
+        $path = __DIR__ . "/" . $file;
+        //$path = "src/pages/html/home/" . $file;
+        if (file_exists($path)) {
+
+            //
+            $binary = fread(fopen($path, "r"), filesize($path));
+
+            //
+            echo "src/pages/html/home/" . $path;
+        } else {
+            throw new Exception("'No existe el archivo'");
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+}
 ?>
 
 
@@ -47,7 +67,7 @@ Roverin Technologics - 2021
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/bootstrap.min.css"); ?>">
 
-    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/font-awesome.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php toBase643("text/css", "assets/css/font-awesome.css"); ?>">
 
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/style.css"); ?>">
 
