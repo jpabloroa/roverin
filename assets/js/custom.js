@@ -82,8 +82,6 @@
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
 
-		console.log("submited0");
-
 		var form = $(this);
 		//var url = form.attr('action');
 		var url = "src/mvc/vista/formulario_home.php";
@@ -99,12 +97,9 @@
 			url: url,
 			data: datos
 		}).done(function (data) {
-			$("#server-response-concact").innerHTML = data.info; // show response from the php script.
+			$("#server-response-concact").innerHTML = data.info;
+			console.log("submited0 " + data.info);
 		});
-
-		console.log(`ajax excecuted in path ${url} del recurso ${datos}`);
-
-
 	});
 
 
