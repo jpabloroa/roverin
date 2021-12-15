@@ -8,6 +8,6 @@ DirectoryIndex src/router/Routes.php
     RewriteRule ^(.+)$ src/router/Routes.php/$1 [QSA,L]
 </IfModule>
 
-ErrorDocument 403 "<h1>404 Not Found<h1><h6>El recurso especificado no existe, por favor póngase en contacto con el administrador del servidor</h6><p>Error en la ruta: </p><script type='text/javascript'>document.body.getElementsByTagName('p').innerHTML += window.location.href;</script>"
-ErrorDocument 404 "<h1>404 Not Found<h1><h6>El recurso especificado no existe, por favor póngase en contacto con el administrador del servidor</h6><p>Error en la ruta: </p><script type='text/javascript'>document.body.getElementsByTagName('p').innerHTML += window.location.href;</script>"
+ErrorDocument 403 "<h1>404 Not Found<h1><h6>El recurso especificado no existe, por favor póngase en contacto con el administrador del servidor</h6><p>Error en la ruta: </p><script type='text/javascript'>document.body.getElementsByTagName('p')[0].innerHTML += window.location.href;</script>"
+ErrorDocument 404 "<h1>404 Not Found<h1><h6>El recurso especificado no existe, por favor póngase en contacto con el administrador del servidor</h6><p>Error en la ruta: </p><script type='text/javascript'>document.body.getElementsByTagName('p')[0].innerHTML += window.location.href;</script>"
 ErrorDocument 500 "<h1>500 Internal Server Error</h1><h6>Ha ocurrido un error, por favor póngase en contacto con el administrador del servidor</h6>"
