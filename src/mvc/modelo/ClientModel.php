@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/ModelController.php";
+
 class ClientModel extends DataBase
 {
     public function obtenerSolicitudCreada($fechaDeCreacion = null, $codigoConteo = null, $correo = null, $celular = null, $nombre = null)
