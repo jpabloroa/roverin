@@ -1,6 +1,6 @@
 DirectoryIndex src/router/Routes.php
 
-Redirect 301 src/router/Routes
+Redirect 301 src/router/Routes.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
