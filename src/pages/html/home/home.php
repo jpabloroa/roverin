@@ -49,7 +49,7 @@ Roverin Technologics - 2021
 
     <link rel="stylesheet" type="text/css" href="src/pages/html/home/assets/css/font-awesome.css">
 
-    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "src/pages/html/home/assets/css/style.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/style.css"); ?>">
 
 </head>
 
