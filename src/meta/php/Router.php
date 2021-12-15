@@ -31,7 +31,8 @@ class Route
                 include(__DIR__ . "/../.." . $content);
                 exit;
             } else if (strlen($inputPath) > 4) {
-                if ($inputPath == "/src") {
+                $text = substr($inputPath, 0, 4);
+                if ($text == "/src") {
                     $_REQUEST["error"] = "gonocaustico";
                     include(__DIR__ . "/../../" . self::$errorRoutes["404"]);
                     exit;
