@@ -3,7 +3,6 @@ function encode64($id, $alt, $class, $encoding, $file)
 {
     $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
     echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ';base64,' . base64_encode($binary) . '"/>';
-    //echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="' . $file . '"/>';
 }
 
 function toBase64($encoding, $file)
@@ -12,12 +11,12 @@ function toBase64($encoding, $file)
         $path = __DIR__ . "/" . $file;
         //$path = "src/pages/html/home/" . $file;
         if (file_exists($path)) {
+
             //
             $binary = fread(fopen($path, "r"), filesize($path));
-            //$binary = file_get_contents($path);
+
             //
             echo 'data:image/png;base64,' . base64_encode($binary);
-            //echo "src/pages/html/home/". $file;
         } else {
             throw new Exception("'No existe el archivo'");
         }
@@ -177,8 +176,7 @@ Roverin Technologics - 2021
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <?php encode64("", "App", "rounded img-fluid d-block mx-auto", "image/bmp", "assets/images/left-image.png") ?>
-                    <!--<img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">-->
+                    <img src="<?php toBase64("image/bmp", "assets/images/left-image.png") ?>" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
