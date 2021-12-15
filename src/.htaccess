@@ -1,6 +1,5 @@
-
 order deny,allow
-deny from all
+#deny from all
 #allow from <YOUR_IP_ADDRESS>
 
 Options -Indexes
