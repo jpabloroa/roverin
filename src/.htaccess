@@ -1,0 +1,3 @@
+Order Allow,Deny 
+Deny from all 
+Redirect 301 src/router/Routes
