@@ -55,6 +55,14 @@ Roverin Technologics - 2021
         .welcome-area {
             background-image: linear-gradient(to bottom, var(--gradiente-inicial-1), var(--gradiente-final-1)), url(<?php toBase64("image/bmp", "assets/images/banner-bg.png") ?>);
         }
+
+        .mini:before {
+            background-image: linear-gradient(to right, var(--gradiente-inicial-1), var(--gradiente-final-1)), url(<?php toBase64("image/bmp", "assets/images/work-process-bg.png") ?>);
+        }
+
+        .counter:before {
+            background-image: linear-gradient(to right, var(--gradiente-inicial-1), var(--gradiente-final-1)), url(<?php toBase64("image/bmp", "assets/images/fun-facts-bg.png") ?>);
+        }
     </style>
 
 </head>
