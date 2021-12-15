@@ -67,8 +67,6 @@ Roverin Technologics - 2021
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/bootstrap.min.css"); ?>">
 
-    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/font-awesome.css"); ?>">
-
     <link rel="stylesheet" type="text/css" href="<?php toBase64("text/css", "assets/css/style.css"); ?>">
 
     <style>
@@ -84,6 +82,8 @@ Roverin Technologics - 2021
             background-image: linear-gradient(to right, var(--gradiente-inicial-1), var(--gradiente-final-1)), url(<?php toBase64("image/bmp", "assets/images/fun-facts-bg.png") ?>);
         }
     </style>
+
+    <link rel="stylesheet" type="text/css" href="<?php toBase643("text/css", "assets/css/font-awesome.css"); ?>">
 
 </head>
 
