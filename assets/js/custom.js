@@ -87,15 +87,19 @@
 		var form = $(this);
 		//var url = form.attr('action');
 		var url = "src/mvc/vista/formulario_home.php";
+		var datos = {
+			nombre: $("#nombre").val(),
+			correo: $("#correo").val(),
+			celular: $("#celular").val(),
+			mensaje: $("#mensaje").val()
+		};
 
-		var datos = form.serialize();
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: datos, // serializes the form's elements.
-			success: function (data) {
-				$("#server-response-concact").innerHTML = data.info; // show response from the php script.
-			}
+			data: datos
+		}).done(function (data) {
+			$("#server-response-concact").innerHTML = data.info; // show response from the php script.
 		});
 
 		console.log(`ajax excecuted in path ${url} del recurso ${datos}`);
