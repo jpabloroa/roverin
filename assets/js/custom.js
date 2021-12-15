@@ -96,7 +96,7 @@
 			}
 		});
 
-		console.log("ajax excecuted");
+		console.log(`ajax excecuted in path ${url}`);
 
 
 	});
