@@ -28,7 +28,7 @@ class Route
             if ($path == $inputPath) {
 
                 //
-                include(__DIR__ . "/../../" . $content);
+                include(__DIR__ . "/../.." . $content);
                 exit;
             }
         }
