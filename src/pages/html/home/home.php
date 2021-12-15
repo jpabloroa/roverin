@@ -2,8 +2,8 @@
 function encode64($id, $alt, $class, $encoding, $file)
 {
     $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
-    //echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ',base64,' . base64_encode($binary) . '"/>';
-    echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="' . $file . '"/>';
+    echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ';base64,' . base64_encode($binary) . '"/>';
+    //echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="' . $file . '"/>';
 }
 
 function toBase64($encoding, $file)
@@ -16,7 +16,7 @@ function toBase64($encoding, $file)
             $binary = fread(fopen($path, "r"), filesize($path));
             //$binary = file_get_contents($path);
             //
-            echo 'data:image/png,base64,' . base64_encode($binary);
+            echo 'data:image/png;base64,' . base64_encode($binary);
             //echo "src/pages/html/home/". $file;
         } else {
             throw new Exception("'No existe el archivo'");
