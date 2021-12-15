@@ -1,10 +1,8 @@
 DirectoryIndex src/router/Routes.php
 
-Redirect 301 src/router/Routes.php
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
-#    RewriteBase /
+    RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.+)$ src/router/Routes.php/$1 [QSA,L]

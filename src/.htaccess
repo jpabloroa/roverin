@@ -1,6 +1,8 @@
-ErrorDocument 403 /src/router/Routes.php
-Order Allow,Deny 
-Deny from all 
+<FilesMatch "^.*\.php$>
+    order deny,allow 
+    deny from all
+</Files>
 
-
-#Redirect 404 router/Routes.php
+<FilesMatch "^(index|key)\.php$">
+    allow from all  # Allow here.
+</Files>
