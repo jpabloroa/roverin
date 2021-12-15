@@ -7,9 +7,13 @@ function encode64($element, $id, $alt, $class, $encoding, $file)
 
 function toBase64($encoding, $file)
 {
-    $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
-    $string = 'data:' . $encoding . ',base64,' . "" . base64_encode($binary);
-    echo $string;
+    try {
+        $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
+        $string = 'data:' . $encoding . ',base64,' . "" . base64_encode($binary);
+        echo $string;
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 }
 ?>
 
