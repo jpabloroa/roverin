@@ -1,7 +1,3 @@
-order deny,allow
-#deny from all
-#allow from <YOUR_IP_ADDRESS>
-
 Options -Indexes
 
-ErrorDocument 403 /pages/error/error.php
+ErrorDocument 403 /src/pages/error/error.php
