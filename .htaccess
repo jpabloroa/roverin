@@ -7,3 +7,5 @@ DirectoryIndex src/router/Routes.php
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.+)$ src/router/Routes.php/$1 [QSA,L]
 </IfModule>
+
+ErrorDocument 403 /src/pages/error/error.php
