@@ -1,4 +1,4 @@
-ErrorDocument 403 scr/pages/error/error.php
+ErrorDocument 403 src/pages/error/error.php
 
 RedirectMatch 403 ^/src/?$
 
