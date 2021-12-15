@@ -491,20 +491,20 @@ Roverin Technologics - 2021
     </footer>
 
     <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="src/pages/html/home/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="src/pages/html/home/js/popper.js"></script>
+    <script src="src/pages/html/home/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script>
+    <script src="src/pages/html/home/js/scrollreveal.min.js"></script>
+    <script src="src/pages/html/home/js/waypoints.min.js"></script>
+    <script src="src/pages/html/home/js/jquery.counterup.min.js"></script>
+    <script src="src/pages/html/home/js/imgfix.min.js"></script>
 
     <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+    <script src="src/pages/html/home/js/custom.js"></script>
 
 </body>
 
