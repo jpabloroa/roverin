@@ -1,14 +1,16 @@
+ErrorDocument 403 /src/pages/error/error.php
+ErrorDocument 404 /src/pages/error/error.php
+ErrorDocument 500 /src/pages/error/error.php
+
 Order Deny,Allow
 Deny from all
 Allow from 192.168.1.10
 
 
-ErrorDocument 403 /src/pages/error/error.php
-ErrorDocument 404 /src/pages/error/error.php
-ErrorDocument 500 /src/pages/error/error.php
 
-RewriteEngine On
-RewriteRule ^(.*/)?\/src/pages/error/error.php+ - [R=404,L]
+
+#RewriteEngine On
+#RewriteRule ^(.*/)?\/src/pages/error/error.php+ - [R=404,L]
 
 #RedirectMatch 404 ^(.*/)?\throwaREAL404error+
 
