@@ -85,7 +85,8 @@
 		console.log("submited0");
 
 		var form = $(this);
-		var url = form.attr('action');
+		//var url = form.attr('action');
+		var url = "src/mvc/vista/formulario_home.php";
 
 		$.ajax({
 			type: "POST",
