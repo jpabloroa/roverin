@@ -11,7 +11,7 @@ function toBase64($encoding, $file)
         $path = __DIR__ . "/" . $file;
         if (file_exists($path)) {
             $binary = fread(fopen($path, "r"), filesize($path));
-            $string = 'data:' . $encoding . ',base64,' . base64_encode($binary);
+            $string = 'data:image/png,base64,' . base64_encode($binary);
             echo $string;
         } else {
             throw new Exception("'No existe el archivo'");
