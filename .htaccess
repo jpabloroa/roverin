@@ -8,5 +8,6 @@ DirectoryIndex src/router/Routes.php
     RewriteRule ^(.+)$ src/router/Routes.php/$1 [QSA,L]
 </IfModule>
 
-ErrorDocument 403 "<h3>Paila rey</h3>"
-ErrorDocument 404 "<h3>Paila rey</h3>"
+ErrorDocument 403 src/pages/error/error.php
+ErrorDocument 404 src/pages/error/error.php
+ErrorDocument 500 src/pages/error/error.php
