@@ -2,371 +2,498 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/images/fav-icon.png" type="image/x-icon">
+
+    <title>roverin - Soluciones de Software</title>
+    <!--
+Roverin Technologics - 2021
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
-<body id="myPage">
+<body>
 
-    <!-- Sidebar on click -->
-    <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2"
-        id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()"
-            class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
-            <i class="fa fa-remove"></i>
-        </a>
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
-        <a href="#" class="w3-bar-item w3-button">Link 4</a>
-        <a href="#" class="w3-bar-item w3-button">Link 5</a>
-    </nav>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
 
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-theme-d2 w3-left-align">
-            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
-                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
 
-            <!-- Logo -->
-            <a href="#" class="w3-bar-item w3-button w3-blue">roverin</a>
-
-            <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Nosotros</a>
-            <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Equipo</a>
-            <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Experiencia</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                    <a href="#" class="w3-bar-item w3-button">Link</a>
-                    <a href="#" class="w3-bar-item w3-button">Link</a>
-                    <a href="#" class="w3-bar-item w3-button">Link</a>
+    <!-- ***** Inicio: Cabezera ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Inicio: Logo ***** -->
+                        <a href="#" class="logo">
+                            <img src="assets/images/logo.png" alt="Roverin tech" />
+                        </a>
+                        <!-- ***** Fin: Logo ***** -->
+                        <!-- ***** Inicio: Menú ***** -->
+                        <ul class="nav">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#lo-que-hacemos" class="active">Lo que hacemos</a></li>
+                            <li><a href="#nuestro-software">Nuestro Software</a></li>
+                            <li><a href="#tutoriales">Tutoriales</a></li>
+                            <li><a href="#contacto">Cont&aacute;ctenos</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Men&uacute;</span>
+                        </a>
+                        <!-- ***** Fin: Menú ***** -->
+                    </nav>
                 </div>
             </div>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i
-                    class="fa fa-search"></i></a>
         </div>
+    </header>
+    <!-- ***** Fin: Cabezera ***** -->
 
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-            <a href="#team" class="w3-bar-item w3-button">Team</a>
-            <a href="#work" class="w3-bar-item w3-button">Work</a>
-            <a href="#pricing" class="w3-bar-item w3-button">Price</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-            <a href="#" class="w3-bar-item w3-button">Search</a>
-        </div>
-    </div>
+    <!-- *****Inicio: Inicio ***** -->
+    <div class="welcome-area" id="inicio">
 
-    <!-- Image Header -->
-    <div class="w3-display-container w3-animate-opacity">
-        <img src="/src/meta/images/equipo/ciudad2.jpeg" alt="boat"
-            style="width:100%;min-height:350px;max-height:600px;">
-        <div class="w3-container w3-display-bottomleft w3-margin-bottom">
-            <button onclick="document.getElementById('id01').style.display='block'"
-                class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">LEARN W3.CSS</button>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="id01" class="w3-modal">
-        <div class="w3-modal-content w3-card-4 w3-animate-top">
-            <header class="w3-container w3-teal w3-display-container">
-                <span onclick="document.getElementById('id01').style.display='none'"
-                    class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                <h4>Oh snap! We just showed you a modal..</h4>
-                <h5>Because we can <i class="fa fa-smile-o"></i></h5>
-            </header>
-            <div class="w3-container">
-                <p>Cool huh? Ok, enough teasing around..</p>
-                <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
-            </div>
-            <footer class="w3-container w3-teal">
-                <p>Modal footer</p>
-            </footer>
-        </div>
-    </div>
-
-    <!-- Container -->
-    <div class="w3-container" style="position:relative">
-        <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
-            style="position:absolute;top:-28px;right:24px">+</a>
-    </div>
-
-    <!---->
-    <div class="w3-row w3-padding-64" id="about">
-        <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <img src="/w3images/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting"
-                width="600" height="750">
-        </div>
-
-        <div class="w3-col m6 w3-padding-large">
-            <h1 class="w3-center">About Catering</h1><br>
-            <h5 class="w3-center">Tradition since 1889</h5>
-            <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet,
-                consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
-            <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-                temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    </div>
-
-    <!---->
-    <div class="w3-row w3-padding-64" id="menu">
-        <div class="w3-col l6 w3-padding-large">
-            <h1 class="w3-center">Our Menu</h1><br>
-            <h4>Bread Basket</h4>
-            <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
-
-            <h4>Honey Almond Granola with Fruits</h4>
-            <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
-
-            <h4>Belgian Waffle</h4>
-            <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-
-            <h4>Scrambled eggs</h4>
-            <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-
-            <h4>Blueberry Pancakes</h4>
-            <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
-        </div>
-
-        <div class="w3-col l6 w3-padding-large">
-            <img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu"
-                style="width:100%">
-        </div>
-    </div>
-
-
-    <!-- Projects row -->
-    <div class="w3-row">
-
-        <!-- Blog entries -->
-        <div class="w3-col l8 s12">
-            <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white">
-                <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
-                <div class="w3-container">
-                    <h3><b>TITLE HEADING</b></h3>
-                    <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+        <!-- ***** Inicio: Encabezado de Inicio ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h1>Soluciones <strong>&aacute;giles y eficacez</strong>
+                            <br>para acelerar su <strong>negocio</strong>
+                        </h1>
+                        <p>Servicios de consultor&iacute;a y desarrollo de <strong>Software empresarial</strong> a la
+                            medida de sus necesidades y requerimientos...
+                        </p>
+                        <a href="#nosotros" class="main-button-slider">Saber m&aacute;s</a>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <!-- ***** Fin: Encabezado de Inicio ***** -->
+    </div>
+    <!-- ***** Fin: Inicio ***** -->
 
-                <div class="w3-container">
-                    <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem
-                        euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed
-                        ultricies mi non congue ullam corper. Praesent tincidunt sed
-                        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam
-                        non fringilla.</p>
-                    <div class="w3-row">
-                        <div class="w3-col m8 s12">
-                            <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button>
+    <!-- ***** Inicio: ¿Por qué nosotros? ***** -->
+    <section class="section home-feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <!-- ***** Inicio: Item de Cualidad ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
+                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="assets/images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Agilidad de entrega</h5>
+                                <p>Generamos <strong>implementaciones de Software</strong> desde cero en un tiempo
+                                    r&eacute;cord</p>
+                            </div>
+                        </div>
+                        <!-- ***** Fin: Item de Cualidad ***** -->
+
+                        <!-- ***** Inicio: Item de Cualidad ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
+                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="assets/images/featured-item-02.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Calidad de producto</h5>
+                                <p>Nos destacamos por generar un <strong>código limpio, durable, escalable, y
+                                        f&aacute;cil de leer</strong></p>
+                            </div>
+                        </div>
+                        <!-- ***** Fin: Item de Cualidad ***** -->
+
+                        <!-- ***** Inicio: Item de Cualidad ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
+                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="assets/images/featured-item-03.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Asesor&iacute;a y acompañamiento</h5>
+                                <p>Brindamos <strong>seguimiento</strong> con el fin de llegar a la necesidad, generando
+                                    modificaciones
+                                </p>
+                            </div>
+                        </div>
+                        <!-- ***** Fin: Item de Cualidad ***** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Fin: ¿Por qué nosotros? ***** -->
+
+    <!-- ***** Inicio: Lo que hacemos ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="lo-que-hacemos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">Transforme una idea, o concepto en una solución tecnológica para un
+                            problema</h2>
+                    </div>
+                    <div class="left-text">
+                        <p><strong>-¿Ha tenido una idea de automatizar una tarea repetitiva que le resta tiempo a usted
+                                o
+                                a sus colegas?</strong><br>
+                            -Si.<br>
+                            El momento de modernizarse ha llegado, por esto, le ofrecemos la posibilidad de convertir un
+                            problema o tarea que lo aqueja, en una mejora para los objetivos de su negocio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section padding-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">Reciba asesor&iacute;a por profesionales e impulse
+                            su negocio</h2>
+                    </div>
+                    <div class="left-text">
+                        <p>
+                            Nuestros profesionales entienden sus necesidades, perm&iacute;tase exponer la
+                            problem&aacute;tica junto con su complejidad, buscando el producto que m&aacute;s se adapta
+                            <hr>
+                            Hable con un asesor por Chat <a href="#" class="main-button">Haga Click Aqu&iacute;</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Inicio: Lo que hacemos ***** -->
+
+    <!-- ***** Inicio: Nuestro software ***** -->
+    <section class="mini" id="nuestro-software">
+        <div class="mini-content">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-3 col-lg-6">
+                        <div class="info">
+                            <h1>Nuestras implementaciones</h1>
+                            <p>Desde <strong>p&aacute;ginas y sitios web</strong> hasta el despliegue de
+                                <strong>aplicaciones web de pequeña, mediana y gran
+                                    embargadura</strong><br><br>
+                                Aqui observar&aacute; las herramientas que nos permiten hacerlo posible:
                             </p>
                         </div>
-                        <div class="w3-col m4 w3-hide-small">
-                            <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span
-                                        class="w3-tag">0</span></span></p>
+                    </div>
+                </div>
+
+                <!-- ***** Mini Box Start ***** -->
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/spa-item-logo.png" alt=""></i>
+                            <strong>Single Page Application</strong>
+                            <span>Maneje sus implementaciones sin recargar la página</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/resp-design-item-logo.png" alt=""></i>
+                            <strong>Responsive Design</strong>
+                            <span>Utilice sus implementaciones en cualquier dispositivo</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/cubos-logo.png" alt=""></i>
+                            <strong>API REST HTTP</strong>
+                            <span>Gestione su información con los métodos HTTP</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/sql-item-logo.png" alt=""></i>
+                            <strong>SQL Servers</strong>
+                            <span>Administre su información desde bases de datos especializadas</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/ajax-item-logo.png" alt=""></i>
+                            <strong>AJAX</strong>
+                            <span>Conecte sus implementaciones en tiempo real de manera asíncrona</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/vm-item-logo.png" alt=""></i>
+                            <strong>VM</strong>
+                            <span>Realice el despliegue de sus aplicaciones en servidores en remoto</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- ***** Mini Box End ***** -->
+            </div>
+        </div>
+    </section>
+
+    <section class="counter">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item decoration-bottom">
+                            <strong>22</strong>
+                            <span>Ideas<br>materializadas</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item decoration-top">
+                            <strong>15</strong>
+                            <span>Lenguajes<br>de programación</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item decoration-bottom">
+                            <strong>190</strong>
+                            <span>Personas<br>beneficiadas</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item">
+                            <strong>+220</strong>
+                            <span>Horas en<br>ahorro de tiempo</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr>
+        </div>
+    </section>
+    <!-- ***** Fin: Nuestro Software ***** -->
 
-            <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white">
-                <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
-                <div class="w3-container">
-                    <h3><b>BLOG ENTRY</b></h3>
-                    <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
+    <!-- ***** Inicio: Tutoriales ***** -->
+    <section class="section" id="tutoriales">
+        <div class="container">
+            <!-- ***** Inicio: Título Tutoriales ***** -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">Cursos gratiutos</h2>
+                    </div>
                 </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>En este espacio encontrará cursos cortos y prácticos,<br> haga click en saber más</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Fin: Título Tutoriales ***** -->
 
-                <div class="w3-container">
-                    <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem
-                        euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed
-                        ultricies mi non congue ullam corper. Praesent tincidunt sed
-                        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam
-                        non fringilla.</p>
-                    <div class="w3-row">
-                        <div class="w3-col m8 s12">
-                            <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button>
-                            </p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="blog-post-thumb">
+                        <div class="img">
+                            <img src="assets/images/blog-item-02.png" alt="">
                         </div>
-                        <div class="w3-col m4 w3-hide-small">
-                            <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span
-                                        class="w3-badge">2</span></span></p>
+                        <div class="blog-content">
+                            <h3>
+                                <a href="#">API con php 8.0</a>
+                            </h3>
+                            <div class="text">
+                                Aprenda a crear una API, por sus siglas en inglés Application Programming Interface o
+                                Interfaz de programación de Aplicaciones. Utilizaremos el lenguage PHP y el servidor
+                                Apache
+                            </div>
+                            <a href="#" class="main-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="blog-post-thumb">
+                        <div class="img">
+                            <img src="assets/images/blog-item-01.png" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h3>
+                                <a href="#">Página web desde cero</a>
+                            </h3>
+                            <div class="text">
+                                Aprenda a crear y desplegar una página web desde cero, utilizando HTML5 y CSS3
+                            </div>
+                            <a href="#" class="main-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="blog-post-thumb">
+                        <div class="img">
+                            <img src="assets/images/blog-item-03.png" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h3>
+                                <a href="#">CRUD con JAVA</a>
+                            </h3>
+                            <div class="text">
+                                Aprenda a crear un CRUD, aplicación que permite crear, leer, actualizar y borrar
+                                registros en una base de datos. Utilizaremos el lenguaje Java, con su implementación
+                                empresarial (EE), un gestor de base de datos MySQL y el servidor Apache-Tomcat 9
+                            </div>
+                            <a href="#" class="main-button">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END BLOG ENTRIES -->
         </div>
+    </section>
+    <!-- ***** Fin: Tutoriales ***** -->
 
-        <!-- Introduction menu -->
-        <div class="w3-col l4">
-            <!-- About Card -->
-            <div class="w3-card w3-margin w3-margin-top">
-                <img src="/w3images/avatar_g.jpg" style="width:100%">
-                <div class="w3-container w3-white">
-                    <h4><b>My Name</b></h4>
-                    <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a
-                        interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
-                </div>
-            </div>
-            <hr>
-
-            <!-- Posts -->
-            <div class="w3-card w3-margin">
-                <div class="w3-container w3-padding">
-                    <h4>Popular Posts</h4>
-                </div>
-                <ul class="w3-ul w3-hoverable w3-white">
-                    <li class="w3-padding-16">
-                        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right"
-                            style="width:50px">
-                        <span class="w3-large">Lorem</span><br>
-                        <span>Sed mattis nunc</span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Ipsum</span><br>
-                        <span>Praes tinci sed</span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Dorum</span><br>
-                        <span>Ultricies congue</span>
-                    </li>
-                    <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-                        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Mingsum</span><br>
-                        <span>Lorem ipsum dipsum</span>
-                    </li>
-                </ul>
-            </div>
-            <hr>
-
-            <!-- Labels / tags -->
-            <div class="w3-card w3-margin">
-                <div class="w3-container w3-padding">
-                    <h4>Tags</h4>
-                </div>
-                <div class="w3-container w3-white">
-                    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span
-                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
-                    </p>
-                </div>
-            </div>
-
-            <!-- END Introduction Menu -->
-        </div>
-
-        <!-- END GRID -->
-    </div>
-
-    <!-- Contact Container -->
-    <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-        <div class="w3-row">
-            <div class="w3-col m5">
-                <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
-                <h3>Address</h3>
-                <p>Swing by for a cup of coffee, or whatever.</p>
-                <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;Chicago, US</p>
-                <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;+00 1515151515</p>
-                <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;test@test.com</p>
-            </div>
-            <div class="w3-col m7">
-                <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
-                    <div class="w3-section">
-                        <label>Name</label>
-                        <input class="w3-input" type="text" name="Name" required="">
+    <!-- ***** Inicio: Contacto ***** -->
+    <section class="section colored" id="contacto">
+        <div class="container">
+            <!-- ***** Inicio: Titulo de Contacto ***** -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">Contacto</h2>
                     </div>
-                    <div class="w3-section">
-                        <label>Email</label>
-                        <input class="w3-input" type="text" name="Email" required="">
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>Ahora, describa su idea o proyecto y reciba una rápida respuesta por parte de nuestros
+                            asesores, y empiece a potenciar su negocio</p>
                     </div>
-                    <div class="w3-section">
-                        <label>Message</label>
-                        <input class="w3-input" type="text" name="Message" required="">
+                </div>
+            </div>
+            <!-- ***** Fin: Titulo de Contacto ***** -->
+
+            <div class="row">
+                <!-- ***** Inicio: Texto de Contacto ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <h5 class="margin-bottom-30">Queremos saber de usted</h5>
+                    <div class="contact-text">
+                        <p>Acontinuación escriba su correo electrónico, un número de contacto y su nombre. Luego
+                            describa detalladamente su proyecto.
+                        </p>
+                        <p id="server-response-concact"></p>
                     </div>
-                    <input class="w3-check" type="checkbox" checked="" name="Like">
-                    <label>I Like it!</label>
-                    <button type="submit" class="w3-button w3-right w3-theme">Send</button>
-                </form>
+                </div>
+                <!-- ***** Fin: Texto de Contacto ***** -->
+
+                <!-- ***** Inicio: Formulario de Contacto ***** -->
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contacto" action="../../../mvc/vista/formulario_home.php" method="post">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <fieldset>
+                                        <input name="nombre" type="text" class="form-control" id="nombre"
+                                            placeholder="Nombre" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <fieldset>
+                                        <input name="email" type="email" class="form-control" id="email"
+                                            placeholder="Correo electrónico" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <fieldset>
+                                        <input name="celular" type="text" class="form-control" id="celular"
+                                            placeholder="Número de celular" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message"
+                                            placeholder="Your Message" required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Fin: Formulario de Contacto ***** -->
             </div>
         </div>
-    </div>
+    </section>
+    <!-- ***** Fin: Contacto ***** -->
 
-    <!-- Image of location/map -->
-    <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
-
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-        <h4>Follow Us</h4>
-        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i
-                class="fa fa-facebook"></i></a>
-        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i
-                class="fa fa-twitter"></i></a>
-        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i
-                class="fa fa-google-plus"></i></a>
-        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i
-                class="fa fa-instagram"></i></a>
-        <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i
-                class="fa fa-linkedin"></i></a>
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-
-        <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-            <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
-            <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-                    <i class="fa fa-chevron-circle-up"></i></span></a>
+    <!-- ***** Inicio: Footer ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Copyright &copy; 2021 Roverin Technologics - Colombia</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Script for side navigation
-        function w3_open() {
-            var x = document.getElementById("mySidebar");
-            x.style.width = "300px";
-            x.style.paddingTop = "10%";
-            x.style.display = "block";
-        }
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
 
-        // Close side navigation
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
-        // Used to toggle the menu on smaller screens when clicking on the menu button
-        function openNav() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-    </script>
+    <!-- Plugins -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
 
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
 
 </body>
 
