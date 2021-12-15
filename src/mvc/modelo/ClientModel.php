@@ -45,13 +45,13 @@ class ClientModel extends DataBase
             mensaje
         ) VALUES (
             NOW(),
-            $nombre,
-            $correo,
-            $celular,
-            $palabrasClave,
+            `$nombre`,
+            `$correo`,
+            `$celular`,
+            `$palabrasClave`,
             0,
-            $diasDeSolicitud,
-            $mensaje
+            `$diasDeSolicitud`,
+            `$mensaje`
         )
         ");
     }
