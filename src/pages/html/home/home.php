@@ -1,13 +1,15 @@
 <?php
-
-function encode64($id, $alt, $class, $file)
+function encode64($element, $id, $alt, $class, $encoding, $file)
 {
-    $binary = fread(fopen(__DIR__ . "/../../../../" . $file, "r"), filesize(__DIR__ . "/../../../../" . $file));
-    echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:image/bmp;base64,' . base64_encode($binary) . '"/>';
+    $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
+    echo '<' . $element . ' id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ",base64," . base64_encode($binary) . '"/>';
 }
 
-
-
+function toBase64($encoding, $file)
+{
+    $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
+    echo 'data:' . $encoding . ',base64,' . base64_encode($binary);
+}
 ?>
 
 
@@ -29,11 +31,11 @@ Roverin Technologics - 2021
 -->
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/plain", "assets/css/bootstrap.min.css") ?>">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="<?php toBase64("text/plain", "assets/css/font-awesome.css") ?>">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php toBase64("text/plain", "assets/css/style.css") ?>">
 
 </head>
 
@@ -161,7 +163,7 @@ Roverin Technologics - 2021
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <?php
-                    encode64("", "App", "rounded img-fluid d-block mx-auto", "assets/images/left-image.png");
+                    encode64("img", "", "App", "rounded img-fluid d-block mx-auto", "image/bmp", "assets/images/left-image.png");
                     ?>
                     <!--<img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">-->
                 </div>
