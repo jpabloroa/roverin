@@ -100,9 +100,7 @@ class ServerController extends BaseController
 
     public function close()
     {
-        $isClosed = session_destroy();
-        unset($_SERVER["PHP_AUTH_USER"]);
-        unset($_SERVER["PHP_AUTH_PW"]);
+        session_destroy();
         $this->redirectToIndex();
     }
 
