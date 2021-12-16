@@ -103,14 +103,19 @@
 				if (datos.mensaje == cookie_last_request.mensaje) {
 					alert("Ya tiene una solicitud en curso");
 				} else {
-					$.ajax({
-						type: "POST",
-						url: url,
-						data: datos
-					}).done(function (data) {
-						var respuesta = data.info;
-						$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
-					});
+					if (!submitted) {
+						$.ajax({
+							type: "POST",
+							url: url,
+							data: datos
+						}).done(function (data) {
+							submitted = true;
+							var respuesta = data.info;
+							$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+						});
+					} else {
+						alert("Su solicitud ha sido enviada");
+					}
 				}
 
 
@@ -134,6 +139,8 @@
 		});
 	}
 
+	var submitted = false;
+
 	// this is the id of the form
 	$("#contacto").submit(function (e) {
 
@@ -149,14 +156,19 @@
 			mensaje: $("#mensaje").val()
 		};
 
-		$.ajax({
-			type: "POST",
-			url: url,
-			data: datos
-		}).done(function (data) {
-			var respuesta = data.info;
-			$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
-		});
+		if (!submitted) {
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: datos
+			}).done(function (data) {
+				submitted = true;
+				var respuesta = data.info;
+				$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+			});
+		} else {
+			alert("Su solicitud ha sido enviada");
+		}
 	});
 
 	//checks if cookies exists
