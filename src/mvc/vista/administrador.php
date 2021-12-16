@@ -3,6 +3,8 @@
 
 session_start();
 
+
+
 foreach ($_SERVER as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
@@ -10,6 +12,7 @@ echo "<hr>";
 foreach ($_SESSION as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
+echo "<hr>";
 
 
 /*
@@ -20,5 +23,11 @@ if (isset($_GET["key"])) {
 }
 */
 require_once __DIR__ . "/../controlador/ServerController.php";
+
+$array =  (isset($_SERVER["PATH_INFO"])) ? explode("/", str_replace("//", "/", $_SERVER["PATH_INFO"])) : ["/", ""];
+
+foreach ($array as $val) {
+    echo $val . "<br>";
+}
 
 //$userController = new ServerController();

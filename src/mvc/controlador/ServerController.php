@@ -14,7 +14,7 @@ class ServerController extends BaseController
     public function __construct()
     {
         $this->httpMethod = strtoupper($_SERVER["REQUEST_METHOD"]);
-        $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/", ""];
+        $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", str_replace("//", "/", $_SERVER["PATH_INFO"])) : ["/", ""];
 
         //
         session_start();
