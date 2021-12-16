@@ -24,24 +24,36 @@ class ServerController extends BaseController
             //This excecutes if theres not a succesful login
             $this->redirectToIndex();
         } else {
-            if (!$this->isLogged) {
 
-                $this->userName = $_SERVER["PHP_AUTH_USER"];
-                $this->passWord = $_SERVER["PHP_AUTH_PW"];
+            //
+            session_start();
+
+            //
+            if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
 
                 require_once __DIR__ . "/../modelo/ServerModel.php";
 
                 $serverController = new ServerModel();
                 if ($serverController->validateUser(
-                    $this->bindParams(["'", "=", "/", "\\"], $this->userName),
-                    $this->bindParams(["'", "=", "/", "\\"], $this->passWord)
+                    $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_USER"]),
+                    $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_PW"])
                 )) {
-                    $this->isLogged = true;
+                    $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
+                    $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
+                    $_SERVER["PHP_AUTH_USER"] = "";
+                    $_SERVER["PHP_AUTH_PW"] = "";
+
                     $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $this->userName);
                 } else {
+                    $_SERVER["PHP_AUTH_USER"] = "";
+                    $_SERVER["PHP_AUTH_PW"] = "";
                     $this->redirectToIndex();
                 }
             } else {
+
+                $this->userName = $_SESSION["AUTH_USER"];
+                $this->passWord = $_SESSION["AUTH_PW"];
+
                 if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
 
                     if ($this->requestPath[1] == "http") {
@@ -52,6 +64,11 @@ class ServerController extends BaseController
                             $this->manageHttp();
                         }
                     } else {
+                        if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
+                            $this->{$this->requestPath[1]}($this->requestPath[2]);
+                        } else {
+                            $this->{$this->requestPath[1]}();
+                        }
                     }
                 }
             }
@@ -61,5 +78,10 @@ class ServerController extends BaseController
     public function manageHttp($http = null)
     {
         echo "Handler: $http";
+    }
+
+    public function agregar($mensaje = null)
+    {
+        echo $mensaje;
     }
 }
