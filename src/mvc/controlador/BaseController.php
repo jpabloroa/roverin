@@ -45,4 +45,19 @@ class BaseController
         echo json_encode($objecto);
         exit;
     }
+
+    /**
+     * Checks if there are not alloed characters in a text and it changes
+     */
+    public function bindParams($characters = [], $text = "")
+    {
+        $array = $characters;
+        $string = $text;
+        foreach ($array as $char) {
+            if (str_contains($string, $char)) {
+                $string = str_replace($char, " ", $string);
+            }
+        }
+        return $string;
+    }
 }

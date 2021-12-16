@@ -1,10 +1,10 @@
 <?php
-function encode64($id, $alt, $class, $encoding, $file)
-{
-    $binary = fread(fopen(__DIR__ . "/" . $file, "r"), filesize(__DIR__ . "/" . $file));
-    echo '<img id="' . $id . '" alt="' . $alt . '" class="' . $class . '" src="data:' . $encoding . ';base64,' . base64_encode($binary) . '"/>';
-}
 
+/**
+ * Hide the link of an inputed file
+ * @param string $encoding
+ * @param string $file
+ */
 function toBase64($encoding, $file)
 {
     try {
@@ -25,6 +25,11 @@ function toBase64($encoding, $file)
     }
 }
 
+/**
+ * Not hide the link of an inputed file
+ * @param string $encoding - unused
+ * @param string $file
+ */
 function toBase643($encoding, $file)
 {
     try {

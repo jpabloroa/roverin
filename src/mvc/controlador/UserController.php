@@ -20,16 +20,17 @@ class UserController extends BaseController
             require_once __DIR__ . "/../modelo/ClientModel.php";
 
             $clientController = new ClientModel();
+
             if (isset($_POST["correo"])) {
-                $clientController->crearNuevaSolicitud(
-                    (isset($_POST["combre"])) ? $_POST["combre"] : "NULL",
-                    $_POST["correo"],
-                    (isset($_POST["celular"])) ? $_POST["celular"] : "NULL",
-                    (isset($_POST["palabrasClave"])) ? $_POST["palabrasClave"] : "NULL",
-                    (isset($_POST["diasDeSolicitud"])) ? $_POST["diasDeSolicitud"] : "NULL",
-                    (isset($_POST["mensaje"])) ? $_POST["mensaje"] : "NULL"
+                $solicitud = $clientController->crearNuevaSolicitud(
+                    (isset($_POST["combre"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["combre"]) : "NULL",
+                    $this->bindParams(["'", "=", "/", "\\"], $_POST["correo"]),
+                    (isset($_POST["celular"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["celular"]) : "NULL",
+                    (isset($_POST["palabrasClave"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["palabrasClave"]) : "NULL",
+                    (isset($_POST["diasDeSolicitud"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["diasDeSolicitud"]) : "NULL",
+                    (isset($_POST["mensaje"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["mensaje"]) : "NULL"
                 );
-                $this->sendOutput(201, [], ["Created Successfully"], "Su solicitud ha sido creada exitosamente");
+                $this->sendOutput(201, [], ["Created Successfully"], "Su solicitud ha sido creada exitosamente\n Número de solicitud: $solicitud");
             } else {
                 $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
             }

@@ -34,7 +34,7 @@ class ClientModel extends DataBase
     }
     public function crearNuevaSolicitud($nombre, $correo, $celular, $palabrasClave, $diasDeSolicitud, $mensaje)
     {
-        return $this->excecuteUpdate("INSERT INTO trabajos (
+        $this->excecuteUpdate("INSERT INTO trabajos (
             fechaDeCreacion,
             nombre, 
             correo,
@@ -54,5 +54,6 @@ class ClientModel extends DataBase
             '$mensaje'
         )
         ");
+        return $this->obtenerSolicitudCreada($correo);
     }
 }
