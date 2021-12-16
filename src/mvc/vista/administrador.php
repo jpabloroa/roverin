@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 session_start();
 
 foreach ($_SERVER as $column => $value) {
@@ -10,7 +10,7 @@ echo "<hr>";
 foreach ($_SESSION as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
-*/
+
 
 /*
 if (isset($_GET["key"])) {
@@ -21,4 +21,4 @@ if (isset($_GET["key"])) {
 */
 require_once __DIR__ . "/../controlador/ServerController.php";
 
-$userController = new ServerController();
+//$userController = new ServerController();
