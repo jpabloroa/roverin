@@ -19,6 +19,6 @@ if (isset($string)) {
 
 require_once __DIR__ . "/../controlador/ServerController.php";
 
-//$userController = new ServerController();
+$userController = new ServerController();
 
 
