@@ -22,6 +22,14 @@ class ServerController extends BaseController
         //
         if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
 
+            if (isset($_GET["login"])) {
+                $credentials = explode(":", $_GET["login"]);
+                if (isset($credentials[0]) && isset($credentials[1])) {
+                    $_SESSION["PHP_AUTH_USER"] = $credentials[0];
+                    $_SESSION["PHP_AUTH_PW"] = $credentials[1];
+                }
+            }
+
             if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
                 header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                 header('HTTP/1.0 401 Unauthorized');
@@ -69,7 +77,7 @@ class ServerController extends BaseController
                     if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
                         $this->{$this->requestPath[1]}($this->requestPath[2]);
                     } else {
-                        $this->{$this->requestPath[1]}();
+                        $this->{($this->requestPath[1] == "") ? "defaultMethod" : $this->requestPath[1]}();
                     }
                 }
             }
