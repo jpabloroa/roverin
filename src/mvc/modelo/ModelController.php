@@ -31,15 +31,18 @@ class Database
     {
         try {
             $stmt = $this->connection->prepare($query);
-            echo $query;
             $result = $stmt->get_result();
 
+            echo $query . "<br>";
+            echo $result . "<br>";
+            echo $stmt . "<br>";
+
             //
-            //if ($result) {
-            $arrayResult = $result->fetch_all(MYSQLI_ASSOC);
-            //} else {
-            //    throw new Exception("El registro buscado no existe");
-            //}
+            if ($result->num_rows > 0) {
+                $arrayResult = $result->fetch_all(MYSQLI_ASSOC);
+            } else {
+                throw new Exception("El registro buscado no existe");
+            }
 
             $stmt->close();
             return $arrayResult;
