@@ -86,7 +86,7 @@
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
 			$("#mensaje").val(cookie_last_request.mensaje);
-			$("#contacto").submit(function (e) {
+			$("#contacto").off("submit").submit(function (e) {
 
 				e.preventDefault(); // avoid to execute the actual submit of the form.
 
