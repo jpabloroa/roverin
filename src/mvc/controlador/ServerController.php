@@ -24,12 +24,14 @@ class ServerController extends BaseController
 
             if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
                 header('WWW-Authenticate: Basic realm="My Realm"');
-                //header('HTTP/1.0 401 Unauthorized');
+                header('HTTP/1.0 401 Unauthorized');
 
                 //This excecutes if theres not a succesful login
                 //$this->redirectToIndex();
                 echo "no se ha autenticado";
             } else {
+
+                echo "inicio de autenticacion";
                 require_once __DIR__ . "/../modelo/ServerModel.php";
 
                 $serverController = new ServerModel();
@@ -47,6 +49,8 @@ class ServerController extends BaseController
                     //$_SERVER["PHP_AUTH_USER"] = null;
                     //$_SERVER["PHP_AUTH_PW"] = null;
                     //$this->redirectToIndex();
+                    header('HTTP/1.0 401 Unauthorized');
+                    header('Sin autorizar');
                     echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
                 }
             }
