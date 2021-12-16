@@ -31,11 +31,12 @@ class ServerController extends BaseController
                     if (isset($credentials[0]) && isset($credentials[1])) {
                         $_SESSION["PHP_AUTH_USER"] = $credentials[0];
                         $_SESSION["PHP_AUTH_PW"] = $credentials[1];
+                        echo "Se ha definido la variable PHP_AUTH_USER: " . $_SERVER['PHP_AUTH_USER'];
                     }
                 }
 
                 if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
-                    echo "No se ha definido las variable PHP_AUTH_USER: " . $_SERVER['PHP_AUTH_USER'];
+                    
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                     header('HTTP/1.0 401 Unauthorized');
 
