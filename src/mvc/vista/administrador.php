@@ -21,7 +21,4 @@ if (isset($_GET["key"])) {
 */
 require_once __DIR__ . "/../controlador/ServerController.php";
 
-$_SERVER["PHP_AUTH_USER"] = "";
-$_SERVER["PHP_AUTH_PW"] = "";
-
 $userController = new ServerController();
