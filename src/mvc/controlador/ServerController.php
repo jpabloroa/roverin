@@ -21,7 +21,8 @@ class ServerController extends BaseController
             header('HTTP/1.0 401 Unauthorized');
 
             //This excecutes if theres not a succesful login
-            $this->redirectToIndex();
+            echo "<h1>Viva el perico</h1>";
+            //$this->redirectToIndex();
         } else {
 
             require_once __DIR__ . "/../modelo/ServerModel.php";
