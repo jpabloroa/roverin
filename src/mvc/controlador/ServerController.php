@@ -101,6 +101,8 @@ class ServerController extends BaseController
     public function close()
     {
         session_destroy();
+        unset($_SERVER["PHP_AUTH_USER"]);
+        unset($_SERVER["PHP_AUTH_PW"]);
         $this->sendOutput(204, [], ["No Content"], "Funcion close llamada<br>Usuario: " . $this->userName);
     }
 
