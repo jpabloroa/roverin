@@ -6,41 +6,60 @@ class ServerController extends BaseController
 {
     private $httpMethod = "";
     private $requestPath = [];
+    private $userName = "";
+    private $passWord = "";
+
+    private $isLogged = false;
 
     public function __construct()
     {
         $this->httpMethod = strtoupper($_SERVER["REQUEST_METHOD"]);
-        $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/"];
-    }
+        $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/", ""];
 
-    public function serverAuthentication()
-    {
         //
         if (!isset($_SERVER['PHP_AUTH_USER'])) {
             header('WWW-Authenticate: Basic realm="My Realm"');
             header('HTTP/1.0 401 Unauthorized');
 
             //This excecutes if theres not a succesful login
-            echo "<h1>Viva el perico</h1>";
-            //$this->redirectToIndex();
+            $this->redirectToIndex();
         } else {
+            if (!$this->isLogged) {
 
-            require_once __DIR__ . "/../modelo/ServerModel.php";
+                $this->userName = $_SERVER["PHP_AUTH_USER"];
+                $this->passWord = $_SERVER["PHP_AUTH_PW"];
 
-            if (isset($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] != "" && isset($_SERVER["PHP_AUTH_PW"]) && $_SERVER["PHP_AUTH_PW"] != "") {
+                require_once __DIR__ . "/../modelo/ServerModel.php";
+
                 $serverController = new ServerModel();
                 if ($serverController->validateUser(
-                    $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_USER"]),
-                    $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_PW"])
+                    $this->bindParams(["'", "=", "/", "\\"], $this->userName),
+                    $this->bindParams(["'", "=", "/", "\\"], $this->passWord)
                 )) {
-                    $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SERVER["PHP_AUTH_USER"]);
+                    $this->isLogged = true;
+                    $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $this->userName);
                 } else {
-                    //$this->redirectToIndex();
-                    echo "<h1>No hay credenciales</h1>";
+                    $this->redirectToIndex();
                 }
             } else {
-                echo "<h1>Re loco</h1>";
+                if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
+
+                    if ($this->requestPath[1] == "http") {
+
+                        if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
+                            $this->manageHttp($this->requestPath[2]);
+                        } else {
+                            $this->manageHttp();
+                        }
+                    } else {
+                    }
+                }
             }
         }
+    }
+
+    public function manageHttp($http = null)
+    {
+        echo "Handler: $http";
     }
 }
