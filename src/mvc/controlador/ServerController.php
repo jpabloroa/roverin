@@ -31,8 +31,9 @@ class ServerController extends BaseController
                         echo "Valor $num: $val<br>";
                     }
                     if (isset($inputCredentials[0]) && isset($inputCredentials[1])) {
-                        $credentials["PHP_AUTH_USER"] = $credentials[0];
-                        $credentials["PHP_AUTH_PW"] = $credentials[1];
+                        array_push($credentials, ["PHP_AUTH_USER" => $credentials[0]]);
+                        array_push($credentials, ["PHP_AUTH_PW" => $credentials[1]]);
+                        //$credentials["PHP_AUTH_PW"] = $credentials[1];
                     }
                 } else if (!isset($_SERVER['PHP_AUTH_USER'])) {
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
@@ -40,7 +41,7 @@ class ServerController extends BaseController
 
                     //This excecutes if theres not a succesful login
                     //$this->redirectToIndex();
-                    exit;
+                    //exit;
                 } else {
                     $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
