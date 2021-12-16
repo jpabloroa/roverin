@@ -72,14 +72,14 @@ class ServerController extends BaseController
                     if ($this->requestPath[1] == "http") {
 
                         if (count($this->requestPath) > 3 && $this->requestPath[2] != "") {
-                            $this->manageHttp(array_diff($requestPath, $requestPath[1]));
+                            $this->manageHttp(array_diff($this->requestPath, $this->requestPath[1]));
                         } else {
                             $this->manageHttp();
                         }
                     } else if (count($this->requestPath) > 3 && $this->requestPath[2] != "") {
-                        $this->{$this->requestPath[1]}(array_diff($requestPath, $requestPath[1]));
+                        $this->{$this->requestPath[1]}(array_diff($this->requestPath, $this->requestPath[1]));
                     } else {
-                        $this->sendOutput(403, [], ["Bad Request"], "Error en la solicitud: " . $requestPath);
+                        $this->sendOutput(403, [], ["Bad Request"], "Error en la solicitud: " . $this->requestPath);
                     }
                 }
             }
