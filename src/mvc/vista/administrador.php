@@ -13,12 +13,12 @@ foreach ($_GET as $column => $value) {
 if (isset($_GET["key"])) {
     $string = $_GET["key"];
     if ($string == "close") {
-        closelog();
+        echo "pericolindo";
     }
 }
 
 require_once __DIR__ . "/../controlador/ServerController.php";
 
-$userController = new ServerController();
+//$userController = new ServerController();
 
 
