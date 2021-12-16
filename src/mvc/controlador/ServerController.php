@@ -36,9 +36,9 @@ class ServerController extends BaseController
                 }
 
                 if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
-                    
-                    header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
-                    header('HTTP/1.0 401 Unauthorized');
+                    echo "<hr>AUTENTIFICATION<hr>";
+                    //header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
+                    //header('HTTP/1.0 401 Unauthorized');
 
                     //This excecutes if theres not a succesful login
                     //$this->redirectToIndex();
