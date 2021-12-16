@@ -1,11 +1,15 @@
 <?php
-session_start();
-/*
+
+
 foreach($_SERVER as $column => $value){
     echo "$column => $value <br>";
 }
-*/
+foreach($_REQUEST as $column => $value){
+    echo "$column => $value <br>";
+}
 
+
+/*
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
@@ -28,13 +32,13 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
         } else {
             //$this->redirectToIndex();
             echo "<h1>No hay credenciales</h1>";
-        }*/
+        }*//*
         echo "<h1>Re loco " . $_SERVER["PHP_AUTH_USER"] . "</h1>";
-        session_destroy();
     } else {
         echo "<h1>Re loco</h1>";
     }
 }
+*/
 
 /*require_once __DIR__ . "/../controlador/ServerController.php";
 
