@@ -10,8 +10,8 @@ foreach ($_GET as $column => $value) {
 }
 */
 
-$string = $_GET["key"];
-if (isset($string)) {
+if (isset($_GET["key"])) {
+    $string = $_GET["key"];
     if ($string == "close") {
         closelog();
     }
