@@ -80,7 +80,7 @@
 					estado = "gestionada con éxito";
 					break;
 			}
-			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada en ${cookie_last_request.fechaDeCreacion}<br>Su solicitud fue ${cookie_last_request.estado}`);
+			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada en ${cookie_last_request.fechaDeCreacion}<br>Su solicitud fue ${estado}`);
 			$("#nombre").val(cookie_last_request.nombre);
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
