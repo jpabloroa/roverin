@@ -86,12 +86,11 @@
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
 			$("#mensaje").val(cookie_last_request.mensaje);
-			$("#contacto").off("submit").submit(function (e) {
+			$("#form-submit-search").css({ "display": "block" });
+			$("#form-submit-search").click(function (e) {
 
 				e.preventDefault(); // avoid to execute the actual submit of the form.
 
-				var form = $(this);
-				//var url = form.attr('action');
 				var url = "src/mvc/vista/formulario_home.php";
 				var datos = {
 					nombre: $("#nombre").val(),
@@ -105,13 +104,36 @@
 				} else {
 					if (!submitted) {
 						$.ajax({
-							type: "POST",
+							type: "GET",
 							url: url,
 							data: datos
 						}).done(function (data) {
 							submitted = true;
-							var respuesta = data.info;
-							$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+							var respuesta = data.datos;
+							if (respuesta != null && respuesta != "") {
+								//
+								var estado = "enviada";
+								var fecha = new Date(respuesta.fechaDeCreacion);
+
+								//
+								switch (respuesta.estado) {
+									case 0:
+										estado = "recibida por un asesor";
+										break;
+									case 1:
+										estado = "respondida y enviada vía email";
+										break;
+									case 2:
+										estado = "gestionada con éxito";
+										break;
+								}
+								$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada el <strong>${fecha.toLocaleDateString()}</strong> a las <strong>${fecha.toLocaleTimeString()}</strong><br>Su solicitud fue ${estado}`);
+								$("#nombre").val(respuesta.nombre);
+								$("#correo").val(respuesta.correo);
+								$("#celular").val(respuesta.celular);
+								$("#mensaje").val(respuesta.mensaje);
+								$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+							}
 						});
 					} else {
 						alert("Su solicitud ha sido enviada");
@@ -140,6 +162,7 @@
 
 	//
 	var submitted = false;
+	var dataSended = { mensaje = "" };
 
 	// this is the id of the form
 	$("#contacto").submit(function (e) {
@@ -156,7 +179,7 @@
 			mensaje: $("#mensaje").val()
 		};
 
-		if (!submitted) {
+		if (datos.mensaje != dataSended.mensaje) {
 			$.ajax({
 				type: "POST",
 				url: url,
@@ -164,6 +187,7 @@
 			}).done(function (data) {
 				submitted = true;
 				var respuesta = data.info;
+				dataSended = datos;
 				$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
 			});
 		} else {

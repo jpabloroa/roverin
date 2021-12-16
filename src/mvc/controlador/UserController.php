@@ -39,6 +39,21 @@ class UserController extends BaseController
                 } else {
                     $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
                 }
+            } else {
+                require_once __DIR__ . "/../modelo/ClientModel.php";
+
+                $clientController = new ClientModel();
+
+                if (isset($_GET["correo"])) {
+                    $solicitud = $clientController->obtenerSolicitudCreada("", $_GET["codigoConteo"], $_GET["correo"], "", "");
+                    if (setcookie("last-request", json_encode($solicitud[0]), time() + (60 * 60 * 24 * 30), "/")) {
+                        $this->sendOutput(200, $solicitud, ["OK"], "Solicitud número: " . $solicitud[0]["codigoConteo"] . "<br>Fecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
+                    } else {
+                        throw new Exception("No hay cookies");
+                    }
+                } else {
+                    $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
+                }
             }
         } catch (Exception $e) {
             $this->sendOutput(500, [], ["Internal Server Error"], "Error del servidor\n Detalles: " . $e->getMessage());
