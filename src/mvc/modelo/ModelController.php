@@ -35,11 +35,11 @@ class Database
             $result = $stmt->get_result();
 
             //
-            if ($result) {
-                $arrayResult = $result->fetch_all(MYSQLI_ASSOC);
-            } else {
-                throw new Exception("El registro buscado no existe");
-            }
+            //if ($result) {
+            $arrayResult = $result->fetch_all(MYSQLI_ASSOC);
+            //} else {
+            //    throw new Exception("El registro buscado no existe");
+            //}
 
             $stmt->close();
             return $arrayResult;
