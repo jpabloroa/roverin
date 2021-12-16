@@ -55,11 +55,11 @@ class ServerController extends BaseController
                         $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                         $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
 
-                        $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $this->userName);
+                        $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SESSION["AUTH_USER"]);
                     } else {
                         echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
                         //$this->redirectToIndex();
-                        //header('HTTP/1.0 401 Unauthorized');
+                        header('HTTP/1.0 401 Unauthorized');
                         //header('Sin autorizar');
                     }
                 }
