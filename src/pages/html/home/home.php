@@ -1,5 +1,7 @@
 <?php
 
+setcookie("perico", "eyno");
+
 /**
  * Hide the link of an inputed file
  * @param string $encoding
@@ -497,10 +499,6 @@ Roverin Technologics - 2021
                         alert(`Cookie guardada: ${cookie}`);
                     }
                 </script>
-
-                <?php
-                setcookie("perico", "eyno");
-                ?>
 
                 <!-- ***** Inicio: Formulario de Contacto ***** -->
                 <div class="col-lg-8 col-md-6 col-sm-12">
