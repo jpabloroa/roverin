@@ -34,7 +34,7 @@ class ClientModel extends DataBase
     }
     public function crearNuevaSolicitud($nombre, $correo, $celular, $palabrasClave, $diasDeSolicitud, $mensaje)
     {
-        $this->excecuteUpdate("INSERT INTO trabajos (
+        $afectadas = $this->excecuteUpdate("INSERT INTO trabajos (
             fechaDeCreacion,
             nombre, 
             correo,
@@ -54,6 +54,10 @@ class ClientModel extends DataBase
             '$mensaje'
         )
         ");
-        return $this->obtenerSolicitudCreada($correo = $correo);
+        if ($afectadas > 0) {
+            return $this->obtenerSolicitudCreada("", "", $correo, "", "");
+        } else {
+            throw new Exception("Ha habido un error en la creación del registro");
+        }
     }
 }
