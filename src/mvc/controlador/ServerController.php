@@ -38,6 +38,8 @@ class ServerController extends BaseController
                     //$this->redirectToIndex();
                     echo "<h1>No hay credenciales</h1>";
                 }
+            } else {
+                echo "<h1>Re loco</h1>";
             }
         }
     }
