@@ -28,11 +28,12 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     $link .= $_SERVER['HTTP_HOST'];
 
     // Append the requested resource location to the URL 
-    $link .= $_SERVER['SCRIPT_NAME'];
-    //echo "Redireccionando a $link";
+    $rqst_uri = $_SERVER['SCRIPT_NAME'];
+    $link .= substr($rqst_uri, "0", count($rqst_uri) - 21);
+    echo "Redireccionando a $link";
 
     //
-    header("location: $link");
+    //header("location: $link");
     exit;
 } else {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
