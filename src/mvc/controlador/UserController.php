@@ -31,7 +31,7 @@ class UserController extends BaseController
                         (isset($_POST["diasDeSolicitud"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["diasDeSolicitud"]) : "NULL",
                         (isset($_POST["mensaje"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["mensaje"]) : "NULL"
                     );
-                    if (setcookie("last-request", $solicitud, time() + (150), "/")) {
+                    if (setcookie("last-request", json_encode($solicitud), time() + (150), "/")) {
                         $this->sendOutput(201, $solicitud, ["Created Successfully"], " Su solicitud ha sido creada exitosamente<br>Número de solicitud: " . $solicitud[0]["codigoConteo"] . "<br>Fecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
                     } else {
                         throw new Exception("No hay cookies");
