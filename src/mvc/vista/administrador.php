@@ -15,6 +15,8 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     //This excecutes if theres not a succesful login
     $_SERVER["PATH_INFO"] = "/";
     include(__DIR__ . "/../../router/Routes.php");
+    header_remove('WWW-Authenticate: Basic realm="My Realm"'); 
+    header_remove("HTTP/1.0 401 Unauthorized"); 
     exit;
 } else {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
