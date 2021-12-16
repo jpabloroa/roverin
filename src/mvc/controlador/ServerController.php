@@ -23,7 +23,7 @@ class ServerController extends BaseController
         if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
 
             if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
-                header('WWW-Authenticate: Basic realm="My Realm"');
+                header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                 header('HTTP/1.0 401 Unauthorized');
 
                 //This excecutes if theres not a succesful login
@@ -40,13 +40,15 @@ class ServerController extends BaseController
                 )) {
                     $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
-                    $_SERVER["PHP_AUTH_USER"] = null;
-                    $_SERVER["PHP_AUTH_PW"] = null;
+                    unset($_SERVER["PHP_AUTH_USER"]);
+                    unset($_SERVER["PHP_AUTH_PW"]);
 
                     $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $this->userName);
                 } else {
-                    $_SERVER["PHP_AUTH_USER"] = null;
-                    $_SERVER["PHP_AUTH_PW"] = null;
+                    $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
+                    $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
+                    unset($_SERVER["PHP_AUTH_USER"]);
+                    unset($_SERVER["PHP_AUTH_PW"]);
                     //$this->redirectToIndex();
                     //header('HTTP/1.0 401 Unauthorized');
                     //header('Sin autorizar');
