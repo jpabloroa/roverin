@@ -1,10 +1,11 @@
 <?php
 
 
-foreach($_SERVER as $column => $value){
+foreach ($_SERVER as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
-foreach($_REQUEST as $column => $value){
+echo "<hr>";
+foreach ($_REQUEST as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
 
