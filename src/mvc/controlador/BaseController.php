@@ -45,9 +45,36 @@ class BaseController
     }
 
     /**
+     * Redirect user to Index page
+     */
+    protected function redirectToIndex()
+    {
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            $link = "https";
+        } else {
+            $link = "http";
+        }
+
+        // Here append the common URL characters.
+        $link .= "://";
+
+        // Append the host(domain name, ip) to the URL.
+        $link .= $_SERVER['HTTP_HOST'];
+
+        // Append the requested resource location to the URL 
+        $scrpt = $_SERVER['SCRIPT_NAME'];
+        $link .= substr($scrpt, "0", strlen($scrpt) - 21);
+        //echo "Redireccionando a $link";
+        
+        //
+        echo '<script>window.location.replace("' . $link . '");</script>';
+        exit;
+    }
+
+    /**
      * Checks if there are not alloed characters in a text and it changes
      */
-    public function bindParams($characters = [], $text = "")
+    protected function bindParams($characters = [], $text = "")
     {
         $array = $characters;
         $string = $text;
