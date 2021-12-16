@@ -88,12 +88,12 @@ class ServerController extends BaseController
         }
     }
 
-    public function manageHttp($http = null)
+    public function manageHttp($http = [])
     {
         $this->sendOutput(204, $http, ["No Content"], "Funcion managHttp llamada con el parámetro: " . implode("/", $http) . "<br>Usuario: " . $this->userName);
     }
 
-    public function agregar($mensaje = null)
+    public function agregar($mensaje = [])
     {
         $this->sendOutput(204, $mensaje, ["No Content"], "Funcion agregar llamada con el parámetro: " . implode("/", $mensaje) . "<br>Usuario: " . $this->userName);
     }
