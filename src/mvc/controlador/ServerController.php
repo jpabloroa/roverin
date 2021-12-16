@@ -31,8 +31,6 @@ class ServerController extends BaseController
                 echo "no se ha autenticado";
             } else {
 
-                echo "inicio de autenticacion";
-                /*
                 require_once __DIR__ . "/../modelo/ServerModel.php";
 
                 $serverController = new ServerModel();
@@ -54,7 +52,6 @@ class ServerController extends BaseController
                     //header('Sin autorizar');
                     echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
                 }
-                */
             }
         } else {
 
