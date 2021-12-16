@@ -32,6 +32,7 @@ class ServerController extends BaseController
             } else {
 
                 echo "inicio de autenticacion";
+                /*
                 require_once __DIR__ . "/../modelo/ServerModel.php";
 
                 $serverController = new ServerModel();
@@ -46,13 +47,14 @@ class ServerController extends BaseController
 
                     $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $this->userName);
                 } else {
-                    //$_SERVER["PHP_AUTH_USER"] = null;
-                    //$_SERVER["PHP_AUTH_PW"] = null;
+                    $_SERVER["PHP_AUTH_USER"] = null;
+                    $_SERVER["PHP_AUTH_PW"] = null;
                     //$this->redirectToIndex();
-                    header('HTTP/1.0 401 Unauthorized');
-                    header('Sin autorizar');
+                    //header('HTTP/1.0 401 Unauthorized');
+                    //header('Sin autorizar');
                     echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
                 }
+                */
             }
         } else {
 
