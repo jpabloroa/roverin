@@ -4,7 +4,7 @@ DirectoryIndex src/router/Routes.php
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.+)$ src/router/Routes.php/$1 [QSA,L]
+    RewriteRule ^(.+)$ src/router/Routes.php /$1 [QSA,L]
 </IfModule>
 
 ErrorDocument 403 "<h1>404 Not Found</h1><p></p><script type='text/javascript'>document.body.getElementsByTagName('p')[0].innerHTML += `El recurso especificado no existe, por favor p&oacute;ngase en contacto con el administrador del servidor<hr>Error en la ruta: ${window.location.href}`;</script>"
