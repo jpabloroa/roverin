@@ -44,7 +44,7 @@ class UserController extends BaseController
 
                 $clientController = new ClientModel();
 
-                if (isset($_GET["correo"])) {
+                if (isset($_GET["codigoConteo"])) {
                     $solicitud = $clientController->obtenerSolicitudCreada("", $_GET["codigoConteo"], "", "", "");
                     if (setcookie("last-request", json_encode($solicitud[0]), time() + (60 * 60 * 24 * 30), "/")) {
                         $this->sendOutput(200, $solicitud, ["OK"], "Solicitud número: " . $solicitud[0]["codigoConteo"] . "<br>Fecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
@@ -52,7 +52,7 @@ class UserController extends BaseController
                         throw new Exception("No hay cookies");
                     }
                 } else {
-                    $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
+                    $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un codigo de solicitud válido");
                 }
             }
         } catch (Exception $e) {
