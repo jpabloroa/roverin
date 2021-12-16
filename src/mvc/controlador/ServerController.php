@@ -40,13 +40,13 @@ class ServerController extends BaseController
                 )) {
                     $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
-                    $_SERVER["PHP_AUTH_USER"] = "";
-                    $_SERVER["PHP_AUTH_PW"] = "";
+                    $_SERVER["PHP_AUTH_USER"] = null;
+                    $_SERVER["PHP_AUTH_PW"] = null;
 
                     $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $this->userName);
                 } else {
-                    $_SERVER["PHP_AUTH_USER"] = "";
-                    $_SERVER["PHP_AUTH_PW"] = "";
+                    $_SERVER["PHP_AUTH_USER"] = null;
+                    $_SERVER["PHP_AUTH_PW"] = null;
                     $this->redirectToIndex();
                 }
             } else {
