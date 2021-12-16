@@ -32,7 +32,7 @@ class UserController extends BaseController
                         (isset($_POST["mensaje"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["mensaje"]) : "NULL"
                     );
                     //setcookie("last-request", json_encode($solicitud), time() + (150), "/", "", true);
-                    $this->sendOutput(201, $solicitud, ["Set-Cookie: last-request=" . json_encode($solicitud) . "; Expires=Wed, 21 Oct 2015 07:28:00 GMT, Path=/", "Created Successfully"], " Su solicitud ha sido creada exitosamente<br>Número de solicitud: " . $solicitud[0]["codigoConteo"] . "<br>Fecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
+                    $this->sendOutput(201, $solicitud, ["Set-Cookie: last-request=" . json_encode($solicitud) . "; Expires=Wed, 15 Dec 2021 11:50:00 GMT, Path=/", "Created Successfully"], " Su solicitud ha sido creada exitosamente<br>Número de solicitud: " . $solicitud[0]["codigoConteo"] . "<br>Fecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
                 } else {
                     $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
                 }
