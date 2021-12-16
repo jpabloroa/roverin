@@ -12,8 +12,6 @@ class BaseController
      */
     protected function sendOutput($status = 0, $datos = [], $httpHeaders = [], $info = '')
     {
-        //
-        header_remove('Set-Cookie');
 
         //
         if ($status < 200) {
