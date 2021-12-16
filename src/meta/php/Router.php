@@ -21,7 +21,7 @@ class Route
     //
     public static function submit()
     {
-        $inputPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/"];
+        $inputPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/", ""];
         foreach (self::$routes as $path => $content) {
 
             //
