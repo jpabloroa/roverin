@@ -127,7 +127,6 @@
 							$("#correo").val(respuesta.correo);
 							$("#celular").val(respuesta.celular);
 							$("#mensaje").val(respuesta.mensaje);
-							$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
 						}
 					});
 				} else {
