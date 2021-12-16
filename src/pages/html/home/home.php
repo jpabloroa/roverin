@@ -476,28 +476,6 @@ Roverin Technologics - 2021
                 </div>
                 <!-- ***** Fin: Texto de Contacto ***** -->
 
-                <script>
-                    function getCookie(cname) {
-                        let name = cname + "=";
-                        let decodedCookie = decodeURIComponent(document.cookie);
-                        let ca = decodedCookie.split(';');
-                        for (let i = 0; i < ca.length; i++) {
-                            let c = ca[i];
-                            while (c.charAt(0) == ' ') {
-                                c = c.substring(1);
-                            }
-                            if (c.indexOf(name) == 0) {
-                                return JSON.parse(c.substring(name.length, c.length));
-                            }
-                        }
-                        return "";
-                    }
-                    var cookie = getCookie("last-request");
-                    if (cookie != "") {
-                        document.getElementById("server-response-contact").innerHTML = `Tienes una solicitud en curso...<br>Creada en ${cookie.fechaDeCreacion}<br>El estado de tu solicitud es ${cookie.estado}`;
-                    }
-                </script>
-
                 <!-- ***** Inicio: Formulario de Contacto ***** -->
                 <div class="col-lg-8 col-md-6 col-sm-12">
                     <div class="contact-form">

@@ -60,6 +60,13 @@
 				$(document).on("scroll", onScroll);
 			});
 		});
+
+		//
+		var cookie_last_request = getCookie("last-request");
+		if (cookie_last_request != "") {
+			$("#server-response-concact").html(`Tienes una solicitud en curso...<br>Creada en ${cookie_last_request.fechaDeCreacion}<br>El estado de tu solicitud es ${cookie_last_request.estado}`);
+		}
+
 	});
 
 	function onScroll(event) {
@@ -98,10 +105,26 @@
 			data: datos
 		}).done(function (data) {
 			var respuesta = data.info;
-			document.getElementById("server-response-concact").innerHTML = respuesta.replace("\n", "<br>");
+			$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
 		});
 	});
 
+	//checks if cookies exists
+	function getCookie(cname) {
+		let name = cname + "=";
+		let decodedCookie = decodeURIComponent(document.cookie);
+		let ca = decodedCookie.split(';');
+		for (let i = 0; i < ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
 
 	// Home seperator
 	if ($('.home-seperator').length) {
