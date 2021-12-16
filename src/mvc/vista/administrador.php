@@ -29,7 +29,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 
     // Append the requested resource location to the URL 
     $rqst_uri = $_SERVER['SCRIPT_NAME'];
-    $link .= substr($rqst_uri, "0", count($rqst_uri) - 21);
+    $link .= substr($rqst_uri, "0", strlen($rqst_uri) - 21);
     echo "Redireccionando a $link";
 
     //
