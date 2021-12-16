@@ -90,12 +90,12 @@ class ServerController extends BaseController
 
     public function manageHttp($http = null)
     {
-        $this->sendOutput(204, [], ["No Content"], "Funcion managHttp llamada con el parámetro: " . implode("/", $http) . "<br>Usuario: " . $this->userName);
+        $this->sendOutput(204, $http, ["No Content"], "Funcion managHttp llamada con el parámetro: " . implode("/", $http) . "<br>Usuario: " . $this->userName);
     }
 
     public function agregar($mensaje = null)
     {
-        $this->sendOutput(204, [], ["No Content"], "Funcion agregar llamada con el parámetro: " . implode("/", $mensaje) . "<br>Usuario: " . $this->userName);
+        $this->sendOutput(204, $mensaje, ["No Content"], "Funcion agregar llamada con el parámetro: " . implode("/", $mensaje) . "<br>Usuario: " . $this->userName);
     }
 
     public function close()
