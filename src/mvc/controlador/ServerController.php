@@ -79,7 +79,7 @@ class ServerController extends BaseController
                     } else if (count($this->requestPath) > 3 && $this->requestPath[2] != "") {
                         $this->{$this->requestPath[1]}(array_diff($this->requestPath, $this->requestPath[1]));
                     } else {
-                        $this->sendOutput(403, [], ["Bad Request"], "Error en la solicitud: " . $this->requestPath);
+                        $this->sendOutput(403, [], ["Bad Request"], "Error en la solicitud: " . implode("/", $this->requestPath));
                     }
                 }
             }
