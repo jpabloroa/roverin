@@ -97,7 +97,8 @@
 			url: url,
 			data: datos
 		}).done(function (data) {
-			document.getElementById("server-response-concact").innerHTML = data.info;
+			var respuesta = data.info;
+			document.getElementById("server-response-concact").innerHTML = respuesta.replace("\n", "<br>");
 		});
 	});
 
