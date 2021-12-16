@@ -27,49 +27,37 @@ class ServerController extends BaseController
 
                 if (isset($_GET["login"])) {
                     $inputCredentials = explode(":", $_GET["login"]);
-                    foreach ($inputCredentials as $num => $val) {
-                        echo "Valor $num: $val<br>";
-                    }
                     if (isset($inputCredentials[0]) && isset($inputCredentials[1])) {
-                        $credentials = array(
-                            "PHP_AUTH_USER" => $inputCredentials[0],
-                            "PHP_AUTH_PW" => $inputCredentials[1]
-                        );
-                        //$credentials["PHP_AUTH_PW"] = $credentials[1];
+                        $credentials["PHP_AUTH_USER"] = $inputCredentials[0];
+                        $credentials["PHP_AUTH_PW"] = $inputCredentials[1];
                     }
-                } else if (!isset($_SERVER['PHP_AUTH_USER'])) {
+                } else if (isset($_SERVER['PHP_AUTH_USER'])) {
+                    $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
+                    $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
+                } else {
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                     header('HTTP/1.0 401 Unauthorized');
 
                     //This excecutes if theres not a succesful login
-                    //$this->redirectToIndex();
-                    //exit;
-                } else {
-                    $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
-                    $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
+                    $this->redirectToIndex();
                 }
 
-                /*
-                require_once __DIR__ . "/../modelo/ServerModel.php";
-
-                $serverController = new ServerModel();
-                if ($serverController->validateUser(
-                    $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_USER"]),
-                    $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_PW"])
-                )) {
-                    $_SESSION["AUTH_USER"] = $credentials["PHP_AUTH_USER"];
-                    $_SESSION["AUTH_PW"] = $credentials["PHP_AUTH_PW"];
-
-                    $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SESSION["AUTH_USER"]);
-                } else {
-                    echo "usuario no valido, credenciales: " . $credentials["PHP_AUTH_USER"] . " y " . $credentials["PHP_AUTH_PW"];
-                    //$this->redirectToIndex();
-                    header('HTTP/1.0 401 Unauthorized');
-                    //header('Sin autorizar');
-                }*/
-
                 if (isset($credentials["PHP_AUTH_USER"])) {
-                    echo "<hr>Credenciales: " . $credentials["PHP_AUTH_USER"] . " y " . $credentials["PHP_AUTH_PW"] . "<hr>";
+                    require_once __DIR__ . "/../modelo/ServerModel.php";
+
+                    $serverController = new ServerModel();
+                    if ($serverController->validateUser(
+                        $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_USER"]),
+                        $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_PW"])
+                    )) {
+                        $_SESSION["AUTH_USER"] = $credentials["PHP_AUTH_USER"];
+                        $_SESSION["AUTH_PW"] = $credentials["PHP_AUTH_PW"];
+
+                        $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SESSION["AUTH_USER"]);
+                    } else {
+                        header('HTTP/1.0 401 Unauthorized');
+                        $this->redirectToIndex();
+                    }
                 } else {
                     echo "No se ingresaron datos";
                 }
@@ -78,6 +66,9 @@ class ServerController extends BaseController
                 $this->userName = $_SESSION["AUTH_USER"];
                 $this->passWord = $_SESSION["AUTH_PW"];
 
+                echo "Bienvenido " . $this->userName;
+                
+                /*
                 if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
 
                     if ($this->requestPath[1] == "http") {
@@ -95,6 +86,7 @@ class ServerController extends BaseController
                         }
                     }
                 }
+                */
             }
         } catch (Exception $e) {
             $this->sendOutput(500, [], ["Internal Server Error"], "Error interno del servidor<br>Detalles: " . $e->getMessage());
