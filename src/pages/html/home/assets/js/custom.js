@@ -67,6 +67,7 @@
 
 			//
 			var estado = "enviada";
+			var fecha = new Date(cookie_last_request.fechaDeCreacion);
 
 			//
 			switch (cookie_last_request.estado) {
@@ -80,7 +81,7 @@
 					estado = "gestionada con éxito";
 					break;
 			}
-			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada en ${cookie_last_request.fechaDeCreacion}<br>Su solicitud fue ${estado}`);
+			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada el ${fecha.toLocaleDateString()} a las ${fecha.toLocaleTimeString()}<br>Su solicitud fue ${estado}`);
 			$("#nombre").val(cookie_last_request.nombre);
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
