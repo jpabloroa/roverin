@@ -13,7 +13,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('HTTP/1.0 401 Unauthorized');
 
     //This excecutes if theres not a succesful login
-    include(__DIR__ . "../../router/Routes.php");
+    include(__DIR__ . "/../../router/Routes.php");
     exit;
 } else {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
