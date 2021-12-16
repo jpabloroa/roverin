@@ -34,7 +34,8 @@ class ServerController extends BaseController
             )) {
                 $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SERVER["PHP_AUTH_USER"]);
             } else {
-                $this->redirectToIndex();
+                //$this->redirectToIndex();
+                echo "<h1>No hay credenciales</h1>";
             }
         }
     }
