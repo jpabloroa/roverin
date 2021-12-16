@@ -1,10 +1,10 @@
 <?php
 
-
+/*
 session_start();
 
 
-/*
+
 foreach ($_SERVER as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
