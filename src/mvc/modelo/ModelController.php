@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/../config/config.php";
+require_once __DIR__ . "/../config/config.php";
 
 class Database
 {
@@ -31,10 +31,17 @@ class Database
     {
         try {
             $stmt = $this->connection->prepare($query);
-            $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-            $stmt->close();
+            $result = $stmt->get_result();
 
-            return $result;
+            //
+            if ($result) {
+                $arrayResult = $result->fetch_all(MYSQLI_ASSOC);
+            } else {
+                throw new Exception("El registro buscado no existe");
+            }
+
+            $stmt->close();
+            return $arrayResult;
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
