@@ -494,7 +494,7 @@ Roverin Technologics - 2021
                     }
                     var cookie = getCookie("last-request");
                     if (cookie != "") {
-                        alert(`Cookie guardada: ${cookie}`);
+                        document.getElementById("server-response-contact").innerHTML = `Tienes una solicitud en curso...<br>Creada en ${cookie.fechaDeCreacion}<br>El estado de tu solicitud es ${cookie.estado}`;
                     }
                 </script>
 
