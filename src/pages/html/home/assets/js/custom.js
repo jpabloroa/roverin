@@ -93,7 +93,8 @@
 
 				var url = "src/mvc/vista/formulario_home.php";
 				var datos = {
-					codigoConteo: cookie_last_request.codigoConteo
+					codigoConteo: cookie_last_request.codigoConteo,
+					correo: cookie_last_request.correo
 				};
 
 				if (!submitted) {
