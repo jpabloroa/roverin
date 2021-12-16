@@ -12,7 +12,6 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
     $_REQUEST["error"] = "404";
-    //include(__DIR__ . "/../../" . self::$errorRoutes["404"]);
 
     //
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
@@ -30,10 +29,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     // Append the requested resource location to the URL 
     $rqst_uri = $_SERVER['SCRIPT_NAME'];
     $link .= substr($rqst_uri, "0", strlen($rqst_uri) - 21);
-    echo "Redireccionando a $link";
+    //echo "Redireccionando a $link";
 
     //
-    //header("location: $link");
+    header("location: $link");
     exit;
 } else {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
