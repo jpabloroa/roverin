@@ -5,7 +5,7 @@ foreach ($_SERVER as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
 echo "<hr>";
-foreach ($_REQUEST as $column => $value) {
+foreach ($_GET as $column => $value) {
     echo "<strong>$column</strong> => $value <br>";
 }
 
