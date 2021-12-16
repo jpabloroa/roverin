@@ -17,7 +17,7 @@ class ServerController extends BaseController
         $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/", ""];
 
         //
-        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+        if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
             header('WWW-Authenticate: Basic realm="My Realm"');
             //header('HTTP/1.0 401 Unauthorized');
 
