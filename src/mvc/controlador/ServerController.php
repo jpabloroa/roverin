@@ -91,15 +91,18 @@ class ServerController extends BaseController
     public function manageHttp($http = null)
     {
         echo "Handler: $http";
+        $this->sendOutput(204, [], ["No Content"], "Funcion managHttp llamada con el parámetro: " . $http . "<br>Usuario: " . $this->userName);
     }
 
     public function agregar($mensaje = null)
     {
         echo $mensaje;
+        $this->sendOutput(204, [], ["No Content"], "Funcion agregar llamada con el parámetro: " . $mensaje . "<br>Usuario: " . $this->userName);
     }
 
     public function close()
     {
         session_destroy();
+        $this->sendOutput(204, [], ["No Content"], "Funcion close llamada<br>Usuario: " . $this->userName);
     }
 }
