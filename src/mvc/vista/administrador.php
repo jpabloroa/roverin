@@ -32,6 +32,9 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     echo '<script>window.location.replace("' . $link . '");</script>';
     exit;
 } else {
-    echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
-    echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
+
+    require_once __DIR__ . "/../controlador/ServerController.php";
+
+    $userController = new ServerController();
+    $userController->serverAuthentication($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']);
 }
