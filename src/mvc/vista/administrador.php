@@ -13,3 +13,10 @@ foreach ($_GET as $column => $value) {
 require_once __DIR__ . "/../controlador/ServerController.php";
 
 $userController = new ServerController();
+
+$string = $_GET["key"];
+if (isset($string)) {
+    if ($string == "close") {
+        closelog();
+    }
+}
