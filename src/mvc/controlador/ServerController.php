@@ -35,7 +35,7 @@ class ServerController extends BaseController
                     }
                 }
 
-                if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
+                if (!isset($_SERVER['PHP_AUTH_USER'])) {
                     echo "<hr>AUTENTIFICATION<hr>";
                     //header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                     //header('HTTP/1.0 401 Unauthorized');
@@ -107,5 +107,13 @@ class ServerController extends BaseController
     {
         session_destroy();
         $this->sendOutput(204, [], ["No Content"], "Funcion close llamada<br>Usuario: " . $this->userName);
+    }
+
+    public function showVariables()
+    {
+        foreach ($_SERVER as $column => $value) {
+            echo "<strong>$column</strong> => $value <br>";
+        }
+        echo "<hr>";
     }
 }
