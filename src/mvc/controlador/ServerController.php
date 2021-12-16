@@ -84,4 +84,9 @@ class ServerController extends BaseController
     {
         echo $mensaje;
     }
+
+    public function close()
+    {
+        session_destroy();
+    }
 }
