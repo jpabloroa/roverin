@@ -104,7 +104,7 @@
 						data: datos
 					}).done(function (data) {
 						submitted = true;
-						var respuesta = data.datos;
+						var respuesta = data.datos[0];
 						if (respuesta != null && respuesta != "") {
 							//
 							var estado = "enviada";
