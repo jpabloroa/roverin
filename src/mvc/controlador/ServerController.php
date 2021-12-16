@@ -26,40 +26,40 @@ class ServerController extends BaseController
                 if (isset($_GET["login"])) {
                     $credentials = explode(":", $_GET["login"]);
                     foreach ($credentials as $num => $val) {
-                        echo "Valor $num: $val";
+                        echo "Valor $num: $val<br>";
                     }
                     if (isset($credentials[0]) && isset($credentials[1])) {
                         $_SESSION["PHP_AUTH_USER"] = $credentials[0];
                         $_SESSION["PHP_AUTH_PW"] = $credentials[1];
                     }
+                }
+
+                if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
+                    echo "No se ha definido las variable PHP_AUTH_USER: " . $_SERVER['PHP_AUTH_USER'];
+                    header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
+                    header('HTTP/1.0 401 Unauthorized');
+
+                    //This excecutes if theres not a succesful login
+                    //$this->redirectToIndex();
+
                 } else {
 
-                    if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
-                        header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
-                        header('HTTP/1.0 401 Unauthorized');
+                    require_once __DIR__ . "/../modelo/ServerModel.php";
 
-                        //This excecutes if theres not a succesful login
-                        //$this->redirectToIndex();
-                        echo "no se ha autenticado";
+                    $serverController = new ServerModel();
+                    if ($serverController->validateUser(
+                        $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_USER"]),
+                        $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_PW"])
+                    )) {
+                        $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
+                        $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
+
+                        $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SESSION["AUTH_USER"]);
                     } else {
-
-                        require_once __DIR__ . "/../modelo/ServerModel.php";
-
-                        $serverController = new ServerModel();
-                        if ($serverController->validateUser(
-                            $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_USER"]),
-                            $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_PW"])
-                        )) {
-                            $_SESSION["AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
-                            $_SESSION["AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
-
-                            $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SESSION["AUTH_USER"]);
-                        } else {
-                            echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
-                            //$this->redirectToIndex();
-                            header('HTTP/1.0 401 Unauthorized');
-                            //header('Sin autorizar');
-                        }
+                        echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
+                        //$this->redirectToIndex();
+                        header('HTTP/1.0 401 Unauthorized');
+                        //header('Sin autorizar');
                     }
                 }
             } else {
