@@ -31,11 +31,8 @@ class Database
     {
         try {
             $stmt = $this->connection->prepare($query);
+            $stmt->execute();
             $result = $stmt->get_result();
-
-            echo $query . "<br>";
-            echo $result . "<br>";
-            echo $stmt . "<br>";
 
             //
             if ($result->num_rows > 0) {
