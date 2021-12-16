@@ -86,6 +86,35 @@
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
 			$("#mensaje").val(cookie_last_request.mensaje);
+			$("#contacto").submit(function (e) {
+
+				e.preventDefault(); // avoid to execute the actual submit of the form.
+
+				var form = $(this);
+				//var url = form.attr('action');
+				var url = "src/mvc/vista/formulario_home.php";
+				var datos = {
+					nombre: $("#nombre").val(),
+					correo: $("#correo").val(),
+					celular: $("#celular").val(),
+					mensaje: $("#mensaje").val()
+				};
+
+				if (datos.mensaje == cookie_last_request.mensaje) {
+					alert("Ya tiene una solicitud en curso");
+				} else {
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: datos
+					}).done(function (data) {
+						var respuesta = data.info;
+						$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+					});
+				}
+
+
+			});
 		}
 
 	});
