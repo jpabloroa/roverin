@@ -28,8 +28,8 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     // Append the requested resource location to the URL 
     $scrpt = $_SERVER['SCRIPT_NAME'];
     $link .= substr($scrpt, "0", strlen($scrpt) - 21);
-    echo "Redireccionando a $link";
-    //echo '<script>window.location.replace("' . $link . '");</script>';
+    //echo "Redireccionando a $link";
+    echo '<script>window.location.replace("' . $link . '");</script>';
     exit;
 } else {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
