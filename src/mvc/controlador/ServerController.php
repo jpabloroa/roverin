@@ -31,8 +31,10 @@ class ServerController extends BaseController
                         echo "Valor $num: $val<br>";
                     }
                     if (isset($inputCredentials[0]) && isset($inputCredentials[1])) {
-                        array_push($credentials, ["PHP_AUTH_USER" => $credentials[0]]);
-                        array_push($credentials, ["PHP_AUTH_PW" => $credentials[1]]);
+                        $credentials = array(
+                            "PHP_AUTH_USER" => $credentials[0],
+                            "PHP_AUTH_PW" => $credentials[1]
+                        );
                         //$credentials["PHP_AUTH_PW"] = $credentials[1];
                     }
                 } else if (!isset($_SERVER['PHP_AUTH_USER'])) {
