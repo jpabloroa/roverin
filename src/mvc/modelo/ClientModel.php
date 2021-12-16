@@ -9,22 +9,22 @@ class ClientModel extends DataBase
         $sql = "";
         if (isset($correo) && $correo != "") {
 
-            $sql = "WHERE correo = $correo";
+            $sql = "WHERE correo = '$correo'";
 
             if (isset($fechaDeCreacion) && $fechaDeCreacion != "") {
-                $sql .= " AND fechaDeCreacion = $fechaDeCreacion";
+                $sql .= " AND fechaDeCreacion = '$fechaDeCreacion'";
             }
 
             if (isset($codigoConteo) && $codigoConteo != "") {
-                $sql .= " AND codigoConteo = $codigoConteo";
+                $sql .= " AND codigoConteo = '$codigoConteo'";
             }
 
             if (isset($celular) && $celular != "") {
-                $sql .= " AND celular = $celular";
+                $sql .= " AND celular = '$celular'";
             }
 
             if (isset($nombre) && $nombre != "") {
-                $sql .= " AND nombre = $nombre";
+                $sql .= " AND nombre = '$nombre'";
             }
 
             return $this->excecuteQuery("SELECT * FROM trabajos $sql ORDER BY fechaDeCreacion ASC LIMIT 1");
