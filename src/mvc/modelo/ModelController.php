@@ -31,6 +31,7 @@ class Database
     {
         try {
             $stmt = $this->connection->prepare($query);
+            echo $query;
             $result = $stmt->get_result();
 
             //
