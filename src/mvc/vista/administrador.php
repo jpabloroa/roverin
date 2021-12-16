@@ -30,9 +30,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     $rqst_uri = $_SERVER['SCRIPT_NAME'];
     $link .= substr($rqst_uri, "0", strlen($rqst_uri) - 21);
     //echo "Redireccionando a $link";
+    include($rqst_uri);
 
     //
-    header("location: $link");
+    //header("location: $link");
     exit;
 } else {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
