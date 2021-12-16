@@ -23,7 +23,7 @@ if (isset($_GET["key"])) {
 }
 */
 require_once __DIR__ . "/../controlador/ServerController.php";
-$_SERVER["PATH_INFO"] = "/" . $_SERVER["PATH_INFO"];
+$_SERVER["PATH_INFO"] .= "/";
 $array =  (isset($_SERVER["PATH_INFO"])) ? explode("/", str_replace("//", "/", $_SERVER["PATH_INFO"])) : ["/", ""];
 
 foreach ($array as $num => $val) {
