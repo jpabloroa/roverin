@@ -2,10 +2,10 @@
 
 
 foreach($_SERVER as $column => $value){
-    echo "$column => $value <br>";
+    echo "<strong>$column</strong> => $value <br>";
 }
 foreach($_REQUEST as $column => $value){
-    echo "$column => $value <br>";
+    echo "<strong>$column</strong> => $value <br>";
 }
 
 
