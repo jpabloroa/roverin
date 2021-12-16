@@ -506,6 +506,8 @@ Roverin Technologics - 2021
                                         <button type="submit" id="form-submit" class="main-button">Enviar
                                             mensaje</button>
                                     </fieldset>
+                                </div>
+                                <div class="col-lg-12">
                                     <fieldset>
                                         <button id="form-submit-search" class="main-button" style="display:none;">Consulte el estado de su solicitud</button>
                                     </fieldset>
