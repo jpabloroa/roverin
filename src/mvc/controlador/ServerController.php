@@ -17,21 +17,19 @@ class ServerController extends BaseController
         $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/", ""];
 
         //
-        if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
-            header('WWW-Authenticate: Basic realm="My Realm"');
-            //header('HTTP/1.0 401 Unauthorized');
+        session_start();
 
-            //This excecutes if theres not a succesful login
-            //$this->redirectToIndex();
-            echo "no se ha autenticado";
-        } else {
+        //
+        if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
 
-            //
-            session_start();
+            if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
+                header('WWW-Authenticate: Basic realm="My Realm"');
+                //header('HTTP/1.0 401 Unauthorized');
 
-            //
-            if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
-
+                //This excecutes if theres not a succesful login
+                //$this->redirectToIndex();
+                echo "no se ha autenticado";
+            } else {
                 require_once __DIR__ . "/../modelo/ServerModel.php";
 
                 $serverController = new ServerModel();
@@ -51,26 +49,26 @@ class ServerController extends BaseController
                     //$this->redirectToIndex();
                     echo "usuario no valido, credenciales: " . $_SERVER["PHP_AUTH_USER"] . " y " . $_SERVER["PHP_AUTH_PW"];
                 }
-            } else {
+            }
+        } else {
 
-                $this->userName = $_SESSION["AUTH_USER"];
-                $this->passWord = $_SESSION["AUTH_PW"];
+            $this->userName = $_SESSION["AUTH_USER"];
+            $this->passWord = $_SESSION["AUTH_PW"];
 
-                if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
+            if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
 
-                    if ($this->requestPath[1] == "http") {
+                if ($this->requestPath[1] == "http") {
 
-                        if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
-                            $this->manageHttp($this->requestPath[2]);
-                        } else {
-                            $this->manageHttp();
-                        }
+                    if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
+                        $this->manageHttp($this->requestPath[2]);
                     } else {
-                        if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
-                            $this->{$this->requestPath[1]}($this->requestPath[2]);
-                        } else {
-                            $this->{$this->requestPath[1]}();
-                        }
+                        $this->manageHttp();
+                    }
+                } else {
+                    if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
+                        $this->{$this->requestPath[1]}($this->requestPath[2]);
+                    } else {
+                        $this->{$this->requestPath[1]}();
                     }
                 }
             }
