@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /*
 foreach($_SERVER as $column => $value){
     echo "$column => $value <br>";
