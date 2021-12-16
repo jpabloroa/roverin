@@ -103,8 +103,7 @@ class ServerController extends BaseController
         $isClosed = session_destroy();
         unset($_SERVER["PHP_AUTH_USER"]);
         unset($_SERVER["PHP_AUTH_PW"]);
-        $this->sendOutput(204, [], ["No Content"], "Funcion close llamada, se cierra la sesion?: $isClosed<br>Usuario: " . $_SERVER["PHP_AUTH_USER"]);
-        exit;
+        $this->redirectToIndex();
     }
 
     public function showVariables()
