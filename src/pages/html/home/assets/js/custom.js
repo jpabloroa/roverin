@@ -81,7 +81,7 @@
 					estado = "gestionada con éxito";
 					break;
 			}
-			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada el ${fecha.toLocaleDateString()} a las ${fecha.toLocaleTimeString()}<br>Su solicitud fue ${estado}`);
+			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada el <strong>${fecha.toLocaleDateString()}</strong> a las <strong>${fecha.toLocaleTimeString()}</strong><br>Su solicitud fue ${estado}`);
 			$("#nombre").val(cookie_last_request.nombre);
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
