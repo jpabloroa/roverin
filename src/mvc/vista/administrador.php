@@ -13,6 +13,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('HTTP/1.0 401 Unauthorized');
 
     //This excecutes if theres not a succesful login
+    $_SERVER["PATH_INFO"] = "/";
     include(__DIR__ . "/../../router/Routes.php");
     exit;
 } else {
