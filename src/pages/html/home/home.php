@@ -477,6 +477,7 @@ Roverin Technologics - 2021
                 <!-- ***** Fin: Texto de Contacto ***** -->
 
                 <script>
+                    setcookie("perico", "eyno");
                     function getCookie(cname) {
                         let name = cname + "=";
                         let decodedCookie = decodeURIComponent(document.cookie);
