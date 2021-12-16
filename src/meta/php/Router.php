@@ -21,11 +21,18 @@ class Route
     //
     public static function submit()
     {
-        $inputPath = (isset($_SERVER["PATH_INFO"])) ? $_SERVER["PATH_INFO"] : "/";
+        $inputPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : "/";
         foreach (self::$routes as $path => $content) {
 
             //
-            if ($path == $inputPath) {
+            if ($path == "/" . $inputPath[1]) {
+
+                //
+                if (isset($inputPath[2])) {
+                    for ($g = 2; $g < count($inputPath); $g++) {
+                        $_SERVER["PATH_INFO"] .= "/" . $inputPath[2];
+                    }
+                }
 
                 //
                 include(__DIR__ . "/../.." . $content);
