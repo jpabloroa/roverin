@@ -30,7 +30,7 @@ class Route
                 //
                 if (isset($inputPath[2])) {
                     for ($g = 2; $g < count($inputPath); $g++) {
-                        $_SERVER["PATH_INFO"] .= "/" . $inputPath[2];
+                        $_SERVER["PATH_INFO"] .= "/" . $inputPath[$g];
                     }
                 }
 
