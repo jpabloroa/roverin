@@ -62,7 +62,7 @@
 		});
 
 		//
-		var cookie_last_request = JSON.parse(getCookie("last-request"));
+		var cookie_last_request = (getCookie("last-request") == "") ? "": JSON.parse(getCookie("last-request"));
 		if (cookie_last_request != "") {
 
 			//
@@ -134,7 +134,6 @@
 				}
 			});
 		}
-
 	});
 
 	//
@@ -190,6 +189,7 @@
 
 	//checks if cookies exists
 	function getCookie(cname) {
+		var response = "";
 		let name = cname + "=";
 		let decodedCookie = decodeURIComponent(document.cookie);
 		let ca = decodedCookie.split(';');
@@ -199,10 +199,11 @@
 				c = c.substring(1);
 			}
 			if (c.indexOf(name) == 0) {
-				return c.substring(name.length, c.length);
+				response = c.substring(name.length, c.length);
+				return response;
 			}
 		}
-		return "";
+		return response;
 	}
 
 	// Home seperator
