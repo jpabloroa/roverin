@@ -1,7 +1,5 @@
 <?php
 
-setcookie("perico", "eyno");
-
 /**
  * Hide the link of an inputed file
  * @param string $encoding
