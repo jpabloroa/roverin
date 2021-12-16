@@ -66,27 +66,22 @@ class ServerController extends BaseController
                 $this->userName = $_SESSION["AUTH_USER"];
                 $this->passWord = $_SESSION["AUTH_PW"];
 
-                echo "Bienvenido " . $this->userName;
-                
-                /*
+
                 if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
 
                     if ($this->requestPath[1] == "http") {
 
-                        if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
-                            $this->manageHttp($this->requestPath[2]);
+                        if (count($this->requestPath) > 3 && $this->requestPath[2] != "") {
+                            $this->manageHttp(array_diff($requestPath, $requestPath[1]));
                         } else {
                             $this->manageHttp();
                         }
+                    } else if (count($this->requestPath) > 3 && $this->requestPath[2] != "") {
+                        $this->{$this->requestPath[1]}(array_diff($requestPath, $requestPath[1]));
                     } else {
-                        if (isset($this->requestPath[2]) && $this->requestPath[2] != "") {
-                            $this->{$this->requestPath[1]}($this->requestPath[2]);
-                        } else {
-                            $this->{($this->requestPath[1] == "") ? "defaultMethod" : $this->requestPath[1]}();
-                        }
+                        $this->sendOutput(403, [], ["Bad Request"], "Error en la solicitud: " . $requestPath);
                     }
                 }
-                */
             }
         } catch (Exception $e) {
             $this->sendOutput(500, [], ["Internal Server Error"], "Error interno del servidor<br>Detalles: " . $e->getMessage());
@@ -95,14 +90,12 @@ class ServerController extends BaseController
 
     public function manageHttp($http = null)
     {
-        echo "Handler: $http";
-        $this->sendOutput(204, [], ["No Content"], "Funcion managHttp llamada con el parámetro: " . $http . "<br>Usuario: " . $this->userName);
+        $this->sendOutput(204, [], ["No Content"], "Funcion managHttp llamada con el parámetro: " . implode("/", $http) . "<br>Usuario: " . $this->userName);
     }
 
     public function agregar($mensaje = null)
     {
-        echo $mensaje;
-        $this->sendOutput(204, [], ["No Content"], "Funcion agregar llamada con el parámetro: " . $mensaje . "<br>Usuario: " . $this->userName);
+        $this->sendOutput(204, [], ["No Content"], "Funcion agregar llamada con el parámetro: " . implode("/", $mensaje) . "<br>Usuario: " . $this->userName);
     }
 
     public function close()
