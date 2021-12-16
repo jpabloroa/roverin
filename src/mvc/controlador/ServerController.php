@@ -27,15 +27,17 @@ class ServerController extends BaseController
 
             require_once __DIR__ . "/../modelo/ServerModel.php";
 
-            $serverController = new ServerModel();
-            if ($serverController->validateUser(
-                $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_USER"]),
-                $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_PW"])
-            )) {
-                $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SERVER["PHP_AUTH_USER"]);
-            } else {
-                //$this->redirectToIndex();
-                echo "<h1>No hay credenciales</h1>";
+            if (isset($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] != "" && isset($_SERVER["PHP_AUTH_PW"]) && $_SERVER["PHP_AUTH_PW"] != "") {
+                $serverController = new ServerModel();
+                if ($serverController->validateUser(
+                    $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_USER"]),
+                    $this->bindParams(["'", "=", "/", "\\"], $_SERVER["PHP_AUTH_PW"])
+                )) {
+                    $this->sendOutput(202, [], ["Accepted"], "Bienvenido " . $_SERVER["PHP_AUTH_USER"]);
+                } else {
+                    //$this->redirectToIndex();
+                    echo "<h1>No hay credenciales</h1>";
+                }
             }
         }
     }
