@@ -54,6 +54,6 @@ class ClientModel extends DataBase
             '$mensaje'
         )
         ");
-        return $this->obtenerSolicitudCreada($correo);
+        return $this->obtenerSolicitudCreada($correo = $correo);
     }
 }
