@@ -99,45 +99,41 @@
 					mensaje: $("#mensaje").val()
 				};
 
-				if (datos.mensaje == cookie_last_request.mensaje) {
-					alert("Ya tiene una solicitud en curso");
-				} else {
-					if (!submitted) {
-						$.ajax({
-							type: "GET",
-							url: url,
-							data: datos
-						}).done(function (data) {
-							submitted = true;
-							var respuesta = data.datos;
-							if (respuesta != null && respuesta != "") {
-								//
-								var estado = "enviada";
-								var fecha = new Date(respuesta.fechaDeCreacion);
+				if (!submitted) {
+					$.ajax({
+						type: "GET",
+						url: url,
+						data: datos
+					}).done(function (data) {
+						submitted = true;
+						var respuesta = data.datos;
+						if (respuesta != null && respuesta != "") {
+							//
+							var estado = "enviada";
+							var fecha = new Date(respuesta.fechaDeCreacion);
 
-								//
-								switch (respuesta.estado) {
-									case 0:
-										estado = "recibida por un asesor";
-										break;
-									case 1:
-										estado = "respondida y enviada vía email";
-										break;
-									case 2:
-										estado = "gestionada con éxito";
-										break;
-								}
-								$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada el <strong>${fecha.toLocaleDateString()}</strong> a las <strong>${fecha.toLocaleTimeString()}</strong><br>Su solicitud fue ${estado}`);
-								$("#nombre").val(respuesta.nombre);
-								$("#correo").val(respuesta.correo);
-								$("#celular").val(respuesta.celular);
-								$("#mensaje").val(respuesta.mensaje);
-								$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+							//
+							switch (respuesta.estado) {
+								case 0:
+									estado = "recibida por un asesor";
+									break;
+								case 1:
+									estado = "respondida y enviada vía email";
+									break;
+								case 2:
+									estado = "gestionada con éxito";
+									break;
 							}
-						});
-					} else {
-						alert("Su solicitud ha sido enviada");
-					}
+							$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada el <strong>${fecha.toLocaleDateString()}</strong> a las <strong>${fecha.toLocaleTimeString()}</strong><br>Su solicitud fue ${estado}`);
+							$("#nombre").val(respuesta.nombre);
+							$("#correo").val(respuesta.correo);
+							$("#celular").val(respuesta.celular);
+							$("#mensaje").val(respuesta.mensaje);
+							$("#server-response-concact").html(respuesta.replace("\n", "<br>"));
+						}
+					});
+				} else {
+					alert("Su solicitud ha sido enviada");
 				}
 			});
 		}
@@ -162,7 +158,7 @@
 
 	//
 	var submitted = false;
-	var dataSended = { mensaje : "" };
+	var dataSended = { mensaje: "" };
 
 	// this is the id of the form
 	$("#contacto").submit(function (e) {
