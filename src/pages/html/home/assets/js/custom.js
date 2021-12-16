@@ -93,10 +93,7 @@
 
 				var url = "src/mvc/vista/formulario_home.php";
 				var datos = {
-					nombre: $("#nombre").val(),
-					correo: $("#correo").val(),
-					celular: $("#celular").val(),
-					mensaje: $("#mensaje").val()
+					codigoConteo: cookie_last_request.codigoConteo
 				};
 
 				if (!submitted) {

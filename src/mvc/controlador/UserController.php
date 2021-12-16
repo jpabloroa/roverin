@@ -45,7 +45,7 @@ class UserController extends BaseController
                 $clientController = new ClientModel();
 
                 if (isset($_GET["correo"])) {
-                    $solicitud = $clientController->obtenerSolicitudCreada("", $_GET["codigoConteo"], $_GET["correo"], "", "");
+                    $solicitud = $clientController->obtenerSolicitudCreada("", $_GET["codigoConteo"], "", "", "");
                     if (setcookie("last-request", json_encode($solicitud[0]), time() + (60 * 60 * 24 * 30), "/")) {
                         $this->sendOutput(200, $solicitud, ["OK"], "Solicitud número: " . $solicitud[0]["codigoConteo"] . "<br>Fecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
                     } else {
