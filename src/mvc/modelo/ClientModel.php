@@ -27,7 +27,7 @@ class ClientModel extends DataBase
                 $sql .= " AND nombre = '$nombre'";
             }
 
-            return $this->excecuteQuery("SELECT * FROM trabajos $sql ORDER BY fechaDeCreacion ASC LIMIT 1");
+            return $this->excecuteQuery("SELECT * FROM trabajos $sql ORDER BY fechaDeCreacion DESC LIMIT 1");
         } else {
             throw new Exception("No se ha ingresado parámetro de búsqueda");
         }
