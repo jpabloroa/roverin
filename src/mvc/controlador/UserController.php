@@ -31,7 +31,7 @@ class UserController extends BaseController
                         (isset($_POST["diasDeSolicitud"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["diasDeSolicitud"]) : "NULL",
                         (isset($_POST["mensaje"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["mensaje"]) : "NULL"
                     );
-                    $this->sendOutput(201, $solicitud, ["Created Successfully"], "Su solicitud ha sido creada exitosamente\nNúmero de solicitud: " . $solicitud[0]["codigoConteo"] . "\nFecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
+                    $this->sendOutput(201, $solicitud, ["Created Successfully"], "Su solicitud ha sido creada exitosamente\nNúmero de solicitud: " . $solicitud[0]["codigoConteo"] . " \nFecha de creación: " . $solicitud[0]["fechaDeCreacion"]);
                 } else {
                     $this->sendOutput(403, [], ["Bad request"], "No se ha insertado un correo");
                 }
