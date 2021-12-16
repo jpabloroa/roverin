@@ -25,6 +25,9 @@ class ServerController extends BaseController
 
                 if (isset($_GET["login"])) {
                     $credentials = explode(":", $_GET["login"]);
+                    foreach ($credentials as $num => $val) {
+                        echo "Valor $num: $val";
+                    }
                     if (isset($credentials[0]) && isset($credentials[1])) {
                         $_SESSION["PHP_AUTH_USER"] = $credentials[0];
                         $_SESSION["PHP_AUTH_PW"] = $credentials[1];
