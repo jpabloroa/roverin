@@ -36,11 +36,11 @@ class ServerController extends BaseController
                     }
                 } else if (!isset($_SERVER['PHP_AUTH_USER'])) {
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
-                    //header('HTTP/1.0 401 Unauthorized');
+                    header('HTTP/1.0 401 Unauthorized');
 
                     //This excecutes if theres not a succesful login
                     //$this->redirectToIndex();
-
+                    exit;
                 } else {
                     $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
@@ -65,7 +65,11 @@ class ServerController extends BaseController
                     //header('Sin autorizar');
                 }*/
 
-                echo "<hr>Credenciales: " . $credentials["PHP_AUTH_USER"] . " y " . $credentials["PHP_AUTH_PW"] . "<hr>";
+                if (isset($credentials["PHP_AUTH_USER"])) {
+                    echo "<hr>Credenciales: " . $credentials["PHP_AUTH_USER"] . " y " . $credentials["PHP_AUTH_PW"] . "<hr>";
+                } else {
+                    echo "No se ingresaron datos";
+                }
             } else {
 
                 $this->userName = $_SESSION["AUTH_USER"];
