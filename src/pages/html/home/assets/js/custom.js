@@ -162,7 +162,7 @@
 
 	//
 	var submitted = false;
-	var dataSended = { mensaje = "" };
+	var dataSended = { mensaje : "" };
 
 	// this is the id of the form
 	$("#contacto").submit(function (e) {
