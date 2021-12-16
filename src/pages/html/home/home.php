@@ -487,7 +487,7 @@ Roverin Technologics - 2021
                                 c = c.substring(1);
                             }
                             if (c.indexOf(name) == 0) {
-                                return c.substring(name.length, c.length);
+                                return JSON.parse(c.substring(name.length, c.length));
                             }
                         }
                         return "";
