@@ -24,7 +24,7 @@ class UserController extends BaseController
 
                 if (isset($_POST["correo"])) {
                     $solicitud = $clientController->crearNuevaSolicitud(
-                        (isset($_POST["combre"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["combre"]) : "NULL",
+                        (isset($_POST["nombre"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["nombre"]) : "NULL",
                         $this->bindParams(["'", "=", "/", "\\"], $_POST["correo"]),
                         (isset($_POST["celular"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["celular"]) : "NULL",
                         (isset($_POST["palabrasClave"])) ? $this->bindParams(["'", "=", "/", "\\"], $_POST["palabrasClave"]) : "NULL",

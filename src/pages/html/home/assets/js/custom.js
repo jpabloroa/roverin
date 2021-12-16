@@ -64,7 +64,23 @@
 		//
 		var cookie_last_request = JSON.parse(getCookie("last-request"));
 		if (cookie_last_request != "") {
-			$("#server-response-concact").html(`Tienes una solicitud en curso...<br>Creada en ${cookie_last_request.fechaDeCreacion}<br>El estado de tu solicitud es ${cookie_last_request.estado}`);
+
+			//
+			var estado = "enviada";
+
+			//
+			switch (cookie_last_request.estado) {
+				case 0:
+					estado = "recibida por un asesor";
+					break;
+				case 1:
+					estado = "respondida y enviada vía email";
+					break;
+				case 2:
+					estado = "gestionada con éxito";
+					break;
+			}
+			$("#server-response-concact").html(`Tiene una solicitud en curso...<br>Creada en ${cookie_last_request.fechaDeCreacion}<br>Su solicitud fue ${cookie_last_request.estado}`);
 			$("#nombre").val(cookie_last_request.nombre);
 			$("#correo").val(cookie_last_request.correo);
 			$("#celular").val(cookie_last_request.celular);
