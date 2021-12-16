@@ -30,6 +30,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
             echo "<h1>No hay credenciales</h1>";
         }*/
         echo "<h1>Re loco " . $_SERVER["PHP_AUTH_USER"] . "</h1>";
+        session_destroy();
     } else {
         echo "<h1>Re loco</h1>";
     }
