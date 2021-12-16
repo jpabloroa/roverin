@@ -1,5 +1,10 @@
 <?php
 
+foreach($_SERVER as $column => $value){
+    echo "$column => $value <br>";
+}
+
+/*
 //
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="My Realm"');
@@ -31,3 +36,4 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
     echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
 }
+*/
