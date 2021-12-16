@@ -29,6 +29,8 @@ class ServerController extends BaseController
                         $_SESSION["PHP_AUTH_USER"] = $credentials[0];
                         $_SESSION["PHP_AUTH_PW"] = $credentials[1];
                     }
+                } else {
+                    echo "no se ha especificado clave login";
                 }
 
                 if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] == "") {
