@@ -86,6 +86,8 @@ class BaseController
             echo "metodo foreach instanciado $num veces";
             $num++;
             if (str_contains($string, $char)) {
+                echo "metodo str_contains instanciado $num veces";
+                $num++;
                 $string = str_replace($char, " ", $string);
             }
         }
