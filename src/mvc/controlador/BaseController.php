@@ -65,7 +65,7 @@ class BaseController
         $scrpt = $_SERVER['SCRIPT_NAME'];
         $link .= substr($scrpt, "0", strlen($scrpt) - 21);
         //echo "Redireccionando a $link";
-        
+
         //
         echo '<script>window.location.replace("' . $link . '");</script>';
         exit;
@@ -79,7 +79,12 @@ class BaseController
         echo "llamada a funcion BaseController::bindParams($text)<br>";
         $array = $characters;
         $string = $text;
+
+        $num = 0;
+
         foreach ($array as $char) {
+            echo "metodo foreach instanciado $num veces";
+            $num++;
             if (str_contains($string, $char)) {
                 $string = str_replace($char, " ", $string);
             }
