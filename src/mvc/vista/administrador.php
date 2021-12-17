@@ -31,12 +31,4 @@ foreach ($array as $num => $val) {
     echo "Valor " . $num . ":" . $val . "<br>";
 }
 */
-echo "ola";
-// based on original work from the PHP Laravel framework
-if (!function_exists('str_contains')) {
-    echo "no existe";
-} else {
-    echo "buena la sapa";
-}
-
-//$userController = new ServerController();
+$userController = new ServerController();
