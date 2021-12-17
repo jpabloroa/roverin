@@ -13,35 +13,28 @@ class ServerController extends BaseController
 
     public function __construct()
     {
-        echo "metodo llamado<br>";
         try {
             $this->httpMethod = strtoupper($_SERVER["REQUEST_METHOD"]);
             $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", str_replace("/&access", "/", $_SERVER["PATH_INFO"])) : ["/", ""];;
 
             //
             session_start();
-            echo "sesion iniciada<br>";
 
             //
             if (!isset($_SESSION["AUTH_USER"])) {
 
                 $credentials = [];
-                echo "llamada a auth user<br>";
 
                 if (isset($_GET["login"])) {
-                    echo "llamada a login con GET<br>";
                     $inputCredentials = explode(":", $_GET["login"]);
                     if (isset($inputCredentials[0]) && isset($inputCredentials[1])) {
                         $credentials["PHP_AUTH_USER"] = $inputCredentials[0];
                         $credentials["PHP_AUTH_PW"] = $inputCredentials[1];
                     }
                 } else if (isset($_SERVER['PHP_AUTH_USER'])) {
-                    echo "llamada a credenciales existentes<br>";
                     $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
-                    echo "hola " . $credentials["PHP_AUTH_USER"] . " " . $credentials["PHP_AUTH_PW"] . "<br>";
                 } else {
-                    echo "llamada a login<br>";
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                     header('HTTP/1.0 401 Unauthorized');
 
@@ -53,15 +46,12 @@ class ServerController extends BaseController
                     require_once __DIR__ . "/../modelo/ServerModel.php";
 
                     $serverController = new ServerModel();
-                    echo "se inicializa ServerController<br>";
                     $serverController->hola();
                     $validation = $serverController->validateUser(
                         $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_USER"]),
                         $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_PW"])
                     );
-                    echo "validation: $validation";
                     if ($validation) {
-                        echo "se validaron claves<br>";
                         $_SESSION["AUTH_USER"] = $credentials["PHP_AUTH_USER"];
                         $_SESSION["AUTH_PW"] = $credentials["PHP_AUTH_PW"];
 
@@ -78,8 +68,6 @@ class ServerController extends BaseController
 
                 $this->userName = $_SESSION["AUTH_USER"];
                 $this->passWord = $_SESSION["AUTH_PW"];
-
-                echo "sesion restaurada";
 
                 if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
 

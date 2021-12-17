@@ -76,22 +76,14 @@ class BaseController
      */
     protected function bindParams($characters = [], $text = "")
     {
-        echo "llamada a funcion BaseController::bindParams($text)<br>";
         $array = $characters;
         $string = $text;
 
-        $num = 0;
-
         foreach ($array as $char) {
-            echo "metodo foreach instanciado $num veces";
-            $num++;
             if (str_contains($string, $char)) {
-                echo "metodo str_contains instanciado $num veces";
-                $num++;
                 $string = str_replace($char, " ", $string);
             }
         }
-        echo "salida a funcion BaseController::bindParams($text)->$string<br>";
         return $string;
     }
 }
