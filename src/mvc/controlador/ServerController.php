@@ -29,12 +29,14 @@ class ServerController extends BaseController
                 echo "llamada a auth user<br>";
 
                 if (isset($_GET["login"])) {
+                    echo "llamada a login con GET<br>";
                     $inputCredentials = explode(":", $_GET["login"]);
                     if (isset($inputCredentials[0]) && isset($inputCredentials[1])) {
                         $credentials["PHP_AUTH_USER"] = $inputCredentials[0];
                         $credentials["PHP_AUTH_PW"] = $inputCredentials[1];
                     }
                 } else if (isset($_SERVER['PHP_AUTH_USER'])) {
+                    echo "llamada a credenciales existentes<br>";
                     $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
                 } else {
