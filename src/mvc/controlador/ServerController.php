@@ -55,10 +55,12 @@ class ServerController extends BaseController
                     $serverController = new ServerModel();
                     echo "se inicializa ServerController<br>";
                     $serverController->hola();
-                    if ($serverController->validateUser(
+                    $validation = $serverController->validateUser(
                         $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_USER"]),
                         $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_PW"])
-                    )) {
+                    );
+                    echo "validation: $validation";
+                    if ($validation) {
                         echo "se validaron claves<br>";
                         $_SESSION["AUTH_USER"] = $credentials["PHP_AUTH_USER"];
                         $_SESSION["AUTH_PW"] = $credentials["PHP_AUTH_PW"];
