@@ -76,7 +76,7 @@ class BaseController
      */
     protected function bindParams($characters = [], $text = "")
     {
-        echo "llamada a funcion BaseController::bindParams()<br>";
+        echo "llamada a funcion BaseController::bindParams($text)<br>";
         $array = $characters;
         $string = $text;
         foreach ($array as $char) {
