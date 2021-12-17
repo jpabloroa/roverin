@@ -39,6 +39,7 @@ class ServerController extends BaseController
                     echo "llamada a credenciales existentes<br>";
                     $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
+                    echo "hola " . $credentials["PHP_AUTH_USER"] . " " . $credentials["PHP_AUTH_PW"] . "<br>";
                 } else {
                     echo "llamada a login<br>";
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
