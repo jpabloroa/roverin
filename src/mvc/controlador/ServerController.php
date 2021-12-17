@@ -72,6 +72,7 @@ class ServerController extends BaseController
                 $this->userName = $_SESSION["AUTH_USER"];
                 $this->passWord = $_SESSION["AUTH_PW"];
 
+                echo "sesion restaurada";
 
                 if (isset($this->requestPath[1]) && $this->requestPath[1] != "") {
 
