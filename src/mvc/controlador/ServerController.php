@@ -13,14 +13,14 @@ class ServerController extends BaseController
 
     public function __construct()
     {
-        echo "metodo llamado";
+        echo "metodo llamado<br>";
         try {
             $this->httpMethod = strtoupper($_SERVER["REQUEST_METHOD"]);
             $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", str_replace("/&access", "/", $_SERVER["PATH_INFO"])) : ["/", ""];;
 
             //
             session_start();
-            echo "sesion iniciada";
+            echo "sesion iniciada<br>";
 
             //
             if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
@@ -37,6 +37,7 @@ class ServerController extends BaseController
                     $credentials["PHP_AUTH_USER"] = $_SERVER["PHP_AUTH_USER"];
                     $credentials["PHP_AUTH_PW"] = $_SERVER["PHP_AUTH_PW"];
                 } else {
+                    echo "llamada a login<br>";
                     header('WWW-Authenticate: Basic realm="Inicie sesión para continuar"');
                     header('HTTP/1.0 401 Unauthorized');
 
