@@ -84,6 +84,7 @@ class BaseController
                 $string = str_replace($char, " ", $string);
             }
         }
+        echo "salida a funcion BaseController::bindParams($text)->$string<br>";
         return $string;
     }
 }
