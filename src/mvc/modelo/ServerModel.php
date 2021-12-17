@@ -8,4 +8,8 @@ class ServerModel extends DataBase
     {
         return ($user == "juan" && $password == "roa");
     }
+
+    public function hola(){
+        echo "llamada a funcion ServerModel::hola()<br>";
+    }
 }
