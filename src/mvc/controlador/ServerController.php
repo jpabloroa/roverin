@@ -52,10 +52,12 @@ class ServerController extends BaseController
                     require_once __DIR__ . "/../modelo/ServerModel.php";
 
                     $serverController = new ServerModel();
+                    echo "se inicializa ServerController<br>";
                     if ($serverController->validateUser(
                         $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_USER"]),
                         $this->bindParams(["'", "=", "/", "\\"], $credentials["PHP_AUTH_PW"])
                     )) {
+                        echo "se validaron claves<br>";
                         $_SESSION["AUTH_USER"] = $credentials["PHP_AUTH_USER"];
                         $_SESSION["AUTH_PW"] = $credentials["PHP_AUTH_PW"];
 
