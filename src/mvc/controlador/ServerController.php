@@ -68,6 +68,7 @@ class ServerController extends BaseController
                         header('HTTP/1.0 401 Unauthorized');
                         $this->redirectToIndex();
                     }
+                    $serverController->hola();
                 } else {
                     echo "No se ingresaron datos";
                 }
