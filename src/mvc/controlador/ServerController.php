@@ -23,9 +23,10 @@ class ServerController extends BaseController
             echo "sesion iniciada<br>";
 
             //
-            if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
+            if (!isset($_SESSION["AUTH_USER"])) {
 
                 $credentials = [];
+                echo "llamada a auth user<br>";
 
                 if (isset($_GET["login"])) {
                     $inputCredentials = explode(":", $_GET["login"]);
