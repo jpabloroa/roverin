@@ -13,12 +13,14 @@ class ServerController extends BaseController
 
     public function __construct()
     {
+        echo "metodo llamado";
         try {
             $this->httpMethod = strtoupper($_SERVER["REQUEST_METHOD"]);
             $this->requestPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", str_replace("/&access", "/", $_SERVER["PATH_INFO"])) : ["/", ""];;
 
             //
             session_start();
+            echo "sesion iniciada";
 
             //
             if (!isset($_SESSION["AUTH_USER"]) || $_SESSION["AUTH_USER"] == "" || !isset($_SESSION["AUTH_PW"]) || $_SESSION["AUTH_PW"] == "") {
