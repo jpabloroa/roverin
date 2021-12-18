@@ -11,6 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+</head>
+
+<body>
+    <h1>Inicio sesión con facebook</h1>
+    <input type="text">
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0&appId=331230838551755&autoLogAppEvents=1" nonce="GRaZWCk9"></script>
+    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -20,38 +31,11 @@
                 version: 'v12.0'
             });
         };
-        FB.api(path, method, params, callback)
-    </script>
-    
-</head>
-
-<body>
-    <h1>Inicio sesión con facebook</h1>
-    <p>
-        <fb:login-button autologoutlink="true"></fb:login-button>
-    </p>
-
-
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '123456',
-                status: true,
-                cookie: true,
-                xfbml: true
-            });
-        };
-
-
-        (function() {
-            var e = document.createElement('script');
-            e.type = 'text/javascript';
-            e.src = document.location.protocol +
-                '//connect.facebook.net/en_US/all.js';
-            e.async = true;
-            document.getElementById('fb-root').appendChild(e);
-        }());
+        FB.api('/me', {
+            fields: 'name'
+        }, function(response) {
+            console.log(response);
+        });
     </script>
 </body>
 
