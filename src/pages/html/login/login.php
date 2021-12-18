@@ -16,15 +16,10 @@
 </head>
 
 <body>
-    <h1>Inicio sesión con facebook</h1>
-    <input type="text">
-
-    <div id="fb-root"></div>
-    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-                appId: '331230838551755',
+                appId: 'your-app-id',
                 autoLogAppEvents: true,
                 xfbml: true,
                 version: 'v12.0'
@@ -36,6 +31,10 @@
             console.log(response);
         });
     </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <h1>Inicio sesión con facebook</h1>
+
+    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
 </body>
 
 </html>
