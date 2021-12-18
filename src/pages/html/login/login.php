@@ -24,12 +24,12 @@
                 xfbml: true,
                 version: 'v12.0'
             });
+            FB.api('/me', {
+                fields: 'name'
+            }, function(response) {
+                console.log(response);
+            });
         };
-        FB.api('/me', {
-            fields: 'name'
-        }, function(response) {
-            console.log(response);
-        });
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <h1>Inicio sesión con facebook</h1>
