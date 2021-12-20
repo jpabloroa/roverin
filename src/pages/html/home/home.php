@@ -61,6 +61,12 @@ function toBase643($encoding, $file)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <!-- Google Search Console -->
+
+    <meta name="google-site-verification" content="risxSmoy0pe6Pvo6TMfUOw8HqZNZq9-0YVe0cYxrjt0" />
+
+    <!-- Fonts & Favicon -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="<?php toBase64("image/bmp", "assets/images/fav-icon.png") ?>" type="image/x-icon">
 
