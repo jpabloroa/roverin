@@ -108,7 +108,20 @@ class ServerController extends BaseController
 
     public function showVariables()
     {
+        echo "<hr>";
         foreach ($_SERVER as $column => $value) {
+            echo "<strong>$column</strong> => $value <br>";
+        }
+        echo "<hr>";
+        foreach ($_GET as $column => $value) {
+            echo "<strong>$column</strong> => $value <br>";
+        }
+        echo "<hr>";
+        foreach ($_ENV as $column => $value) {
+            echo "<strong>$column</strong> => $value <br>";
+        }
+        echo "<hr>";
+        foreach ($_SESSION as $column => $value) {
             echo "<strong>$column</strong> => $value <br>";
         }
         echo "<hr>";
