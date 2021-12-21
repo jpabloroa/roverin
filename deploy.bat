@@ -3,7 +3,7 @@
 D:
 cd "\OneDrive\Escritorio\CLASE JAVA\ROVERIN\scripts"
 
-git add src/
+git add .
 
 git commit -am"Corrección de errores"
 
