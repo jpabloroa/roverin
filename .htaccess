@@ -1,6 +1,6 @@
 DirectoryIndex src/router/Routes.php
 
-#Options -Indexes
+Options -Indexes
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
