@@ -106,6 +106,12 @@ class ServerController extends BaseController
         $this->redirectToIndex();
     }
 
+    public function applications($http = null)
+    {
+        header("location: ");
+        exit;
+    }
+
     public function showVariables()
     {
         echo "<hr>";
