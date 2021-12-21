@@ -6,7 +6,7 @@ class ServerModel extends DataBase
 {
     public function validateUser($user = "", $password = "")
     {
-        return ($user == "juan" && $password == "roa");
+        return ($user == "jroa" && $password == "Nad95037");
     }
 
     public function hola(){
