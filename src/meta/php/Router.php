@@ -41,7 +41,7 @@ class Route
             } else if ("/apps" == "/" . $inputPath[1]) {
 
                 //
-                include(__DIR__ . "\..\..\.." . $_SERVER["PATH_INFO"]);
+                echo include(__DIR__ . "\..\..\.." . $_SERVER["PATH_INFO"]);
                 exit;
             }
         }
