@@ -38,6 +38,11 @@ class Route
                 //
                 include(__DIR__ . "\..\.." . $content);
                 exit;
+            } else if ("/apps" == "/" . $inputPath[1]) {
+
+                //
+                include(__DIR__ . "\..\.." . $_SERVER["PATH_INFO"]);
+                exit;
             }
         }
 
