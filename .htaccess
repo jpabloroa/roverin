@@ -1,4 +1,5 @@
-DirectoryIndex src/router/Routes.php
+#DirectoryIndex src/router/Routes.php
+DirectoryIndex opera.html
 
 Options -Indexes
 
