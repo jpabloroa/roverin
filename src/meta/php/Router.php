@@ -23,10 +23,8 @@ class Route
     {
         $inputPath = (isset($_SERVER["PATH_INFO"])) ? explode("/", $_SERVER["PATH_INFO"]) : ["/", ""];
         foreach (self::$routes as $path => $content) {
-            echo "iniciado $content";
             //
             if ($path == "/" . $inputPath[1]) {
-                echo "iniciado";
                 //
                 if (isset($inputPath[2])) {
                     $_SERVER["PATH_INFO"] = "";
@@ -35,7 +33,6 @@ class Route
                     }
                 }
 
-                echo "finalizado $content";
                 //
                 include(__DIR__ . "/../.." . $content);
                 exit;
