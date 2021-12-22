@@ -35,6 +35,7 @@ class Route
                     }
                 }
 
+                echo "finalizado $content";
                 //
                 include(__DIR__ . "\..\.." . $content);
                 exit;
